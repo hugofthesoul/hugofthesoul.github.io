@@ -1,6 +1,7 @@
 import React from 'react';
 
 import FilterBar from './component/FilterBar';
+import Statistics from './component/Statistics';
 import VideoList from './component/VideoList';
 
 import './App.scss';
@@ -10,12 +11,20 @@ class App extends React.Component {
   constructor(props){
     super(props);
     this.state = {
+      statisticsResults: {
+        TotalRecovered: 0
+      },
       searchResults: { 
         videos: [] 
       }
     };
 
+    this.onStatisticsResultsChange = this.onStatisticsResultsChange.bind(this);
     this.onSearchResultsChange = this.onSearchResultsChange.bind(this);
+  }
+
+  onStatisticsResultsChange(results){
+    this.setState({ statisticsResults: results })
   }
 
   onSearchResultsChange(results){
@@ -25,10 +34,12 @@ class App extends React.Component {
   render(){
     return (
       <div className="App">
-        <FilterBar onSearchResultsChange={this.onSearchResultsChange} />
+        <FilterBar onStatisticsResultsChange={this.onStatisticsResultsChange}
+                   onSearchResultsChange={this.onSearchResultsChange} />
         <div className="container">
           <div className="row justify-content-sm-center">
             <div className="col-sm-6">
+              <Statistics statistics={this.state.statisticsResults} />
               <VideoList videos={this.state.searchResults.videos} />
             </div>
           </div>

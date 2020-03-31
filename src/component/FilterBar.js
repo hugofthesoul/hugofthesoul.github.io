@@ -31,6 +31,7 @@ class FilterBar extends React.Component {
       }
     };
 
+    this.onStatisticsResultsChange = props.onStatisticsResultsChange;
     this.onSearchResultsChange = props.onSearchResultsChange;
     this.searchQuery = React.createRef();
     this.toggleAsc = this.toggleAsc.bind(this);
@@ -70,6 +71,23 @@ class FilterBar extends React.Component {
 
     axios({
       method: 'get',
+      url: 'https://api.covid19api.com/summary',
+      responseType: 'json'
+    }).then(function (response) {
+      // handle success
+      for (var i in response.data.Countries){
+        if (response.data.Countries[i].Country === component.state.selectedCountry.name){
+          component.onStatisticsResultsChange(response.data.Countries[i]);
+        }
+      }
+    })
+    .catch(function (error) {
+      // handle error
+      console.log(error);
+    });
+
+    axios({
+      method: 'get',
       url: 'https://www.googleapis.com/youtube/v3/search',
       responseType: 'json',
       params: {
@@ -87,7 +105,7 @@ class FilterBar extends React.Component {
         q: this.searchQuery.current.value
       }
     }).then(function (response) {
-        // handle success
+      // handle success
       console.log(response);
       component.onSearchResultsChange({ videos: response.data.items });
     })
