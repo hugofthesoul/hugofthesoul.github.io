@@ -26,11 +26,16 @@ class App extends React.Component {
     return (
       <div className="App">
         <FilterBar onSearchResultsChange={this.onSearchResultsChange} />
-        <VideoList videos={this.state.searchResults.videos} />
+        <div className="container">
+          <div className="row justify-content-sm-center">
+            <div className="col-sm-6">
+              <VideoList videos={this.state.searchResults.videos} />
+            </div>
+          </div>
+        </div>
       </div>
     );
   }
-
 }
 
 export default App;

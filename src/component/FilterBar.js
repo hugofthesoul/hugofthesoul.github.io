@@ -22,11 +22,11 @@ class FilterBar extends React.Component {
 
     this.state = {
       selectedCountry: {
-        name: "--", 
+        name: "--",
         code: "--"
       },
-      sortBy: { 
-        field: this.sortByFields[0], 
+      sortBy: {
+        field: this.sortByFields[0],
         asc: true
       }
     };
@@ -39,7 +39,7 @@ class FilterBar extends React.Component {
 
   onCountrySelect(item){
     return (e) =>{
-      this.setState({ 
+      this.setState({
         selectedCountry: item
       });
     }
@@ -66,7 +66,6 @@ class FilterBar extends React.Component {
   }
 
   onSearch(e){
-
     var component = this;
 
     axios({
@@ -85,13 +84,12 @@ class FilterBar extends React.Component {
         type: "video",
         videoDuration: "short",
         videoEmbeddable: true,
-        q: this.searchQuery.value
+        q: this.searchQuery.current.value
       }
     }).then(function (response) {
         // handle success
       console.log(response);
       component.onSearchResultsChange({ videos: response.data.items });
-
     })
     .catch(function (error) {
       // handle error
@@ -100,15 +98,14 @@ class FilterBar extends React.Component {
   }
 
   render(){
-
     const UpArrow = () => <span>&uarr;</span>;
     const DownArrow = () => <span>&darr;</span>;
 
-    const sortByItems = this.sortByFields.map((item,key) => 
+    const sortByItems = this.sortByFields.map((item) =>
       <NavDropdown.Item key={item.field} onClick={this.onSortBySelect(item)}>{item.display}</NavDropdown.Item>
     );
 
-    const countryItems = countries.map((item,key) =>
+    const countryItems = countries.map((item) =>
       <NavDropdown.Item key={item.code} onClick={this.onCountrySelect(item)}>
         {item.name}
       </NavDropdown.Item>
@@ -140,10 +137,7 @@ class FilterBar extends React.Component {
         </Navbar.Collapse>
       </Navbar>
     );
-
   }
-
 }
-
 
 export default FilterBar;
