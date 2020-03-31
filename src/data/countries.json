@@ -1,0 +1,32 @@
+[
+  {
+    "name": "Bolivia",
+    "code": "BO",
+    "language": "es"
+  },
+  {
+    "name": "Canada",
+    "code": "CA",
+    "language": "en"
+  },
+  {
+    "name": "Germany",
+    "code": "DE",
+    "language": "de"
+  },
+  {
+    "name": "India",
+    "code": "IN",
+    "language": "en"
+  },
+  {
+    "name": "United Kingdom",
+    "code": "GB",
+    "language": "en"
+  },
+  {
+    "name": "United States of America",
+    "code": "US",
+    "language": "en"
+  }
+]
