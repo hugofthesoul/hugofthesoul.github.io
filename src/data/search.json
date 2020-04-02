@@ -1,0 +1,23 @@
+{
+    "en":
+    {
+        "gratitude": "Thanks",
+        "kindness": "Kindness",
+        "miricle": "Recovery",
+        "doctors": "Nurses"
+    },
+    "de":
+    {
+        "gratitude": "Danke",
+        "kindness": "Freundlichkeit",
+        "miricle": "Wiederherstellung",
+        "doctors": "Krankenschwestern"
+    },
+    "es":
+    {
+        "gratitude": "Gracias",
+        "kindness": "Amabilidad",
+        "miricle": "Recuperación",
+        "doctors": "Enfermeras"
+    }
+}
