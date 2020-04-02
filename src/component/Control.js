@@ -2,21 +2,36 @@ import axios from 'axios';
 
 import React from 'react';
 
+import Card from 'react-bootstrap/Card';
+import Image from 'react-bootstrap/Image';
 import ToggleButton from 'react-bootstrap/ToggleButton';
 import ToggleButtonGroup from 'react-bootstrap/ToggleButtonGroup';
 
+import countries from '../data/countries.json';
 import search from '../data/search.json';
+
+import boFlag from '../image/bolivia_640.png';
+import caFlag from '../image/canada_640.png';
+import enFlag from '../image/england_640.png';
+import deFlag from '../image/germany_640.png';
+import inFlag from '../image/india_640.png';
+import esFlag from '../image/spain_640.png';
+import gbFlag from '../image/united_kingdom_640.png';
+import usFlag from '../image/united_states_of_america_640.png';
 
 class Control extends React.Component {
   constructor(props){
     super(props);
 
     this.state = {
-      selectedCountry: "us",
+      selectedCountry: "ca",
       selectedLanguage: "en"
     };
 
+    this.getStatistics();
+    this.onStatisticsChange = props.onStatisticsChange;
     this.onVideoChange = props.onVideoChange;
+
     this.onSelectedChannelChange = this.onSelectedChannelChange.bind(this);
     this.onSelectedCountryChange = this.onSelectedCountryChange.bind(this);
     this.onSelectedLanguageChange = this.onSelectedLanguageChange.bind(this);
@@ -26,7 +41,6 @@ class Control extends React.Component {
     var component = this;
 
     var searchTerm = search[this.state.selectedLanguage][item];
-    console.log(searchTerm);
 
     axios({
       method: 'get',
@@ -49,7 +63,36 @@ class Control extends React.Component {
   }
 
   onSelectedCountryChange(item){
-    this.setState({ selectedCountry: item });
+    this.setState({ selectedCountry: item },
+                  () => this.getStatistics());
+  }
+
+  getStatistics(){
+    var component = this;
+
+    var country = "";
+    for (var i in countries){
+      if (countries[i].code === component.state.selectedCountry){
+        country = countries[i].name;
+      }
+    }
+
+    axios({
+      method: 'get',
+      url: 'https://api.covid19api.com/summary',
+      responseType: 'json'
+    }).then(function (response) {
+      // handle success
+      for (var i in response.data.Countries){
+        if (response.data.Countries[i].Country === country){
+          component.onStatisticsChange(response.data.Countries[i].TotalRecovered);
+        }
+      }
+    })
+    .catch(function (error) {
+      // handle error
+      console.log(error);
+    });
   }
 
   onSelectedLanguageChange(item){
@@ -58,31 +101,36 @@ class Control extends React.Component {
 
   render(){
     return (
-      <div className="control">
-        <ToggleButtonGroup name="channel" type="radio" onChange={this.onSelectedChannelChange}>
-          <ToggleButton value="gratitude" size="lg">Gratitude</ToggleButton>
-          <ToggleButton value="kindness" size="lg">Kindness</ToggleButton>
-          <br/>
-          <ToggleButton value="miricle" size="lg">Miricle</ToggleButton>
-          <ToggleButton value="doctors" size="lg">Doctors</ToggleButton>
-          <br/>
-        </ToggleButtonGroup>
+      <Card>
+        <Card.Body>
+          <Card.Title>Remote Control</Card.Title>
+          <Card.Text>Try out our channels</Card.Text>
+          <ToggleButtonGroup name="channel" type="radio" onChange={this.onSelectedChannelChange}>
+            <ToggleButton value="gratitude" size="lg">Gratitude</ToggleButton>
+            <ToggleButton value="kindness" size="lg">Kindness</ToggleButton>
+            <br/>
+            <ToggleButton value="miricle" size="lg">Miricle</ToggleButton>
+            <ToggleButton value="doctors" size="lg">Doctors</ToggleButton>
+          </ToggleButtonGroup>
 
-        <ToggleButtonGroup name="country" type="radio" onChange={this.onSelectedCountryChange}>
-          <ToggleButton value="bo">Bolivia</ToggleButton>
-          <ToggleButton value="ca">Canada</ToggleButton>
-          <ToggleButton value="de">Germany</ToggleButton>
-          <ToggleButton value="in">India</ToggleButton>
-          <ToggleButton value="gb">United Kingdom</ToggleButton>
-          <ToggleButton value="us" defaultChecked>United States of America</ToggleButton>
-        </ToggleButtonGroup>
+          <ToggleButtonGroup name="country" type="radio" onChange={this.onSelectedCountryChange}
+                             defaultValue = "ca">
+            <ToggleButton value="bo"><Image src={boFlag} height="20" /></ToggleButton>
+            <ToggleButton value="ca"><Image src={caFlag} height="20" /></ToggleButton>
+            <ToggleButton value="de"><Image src={deFlag} height="20" /></ToggleButton>
+            <ToggleButton value="in"><Image src={inFlag} height="20" /></ToggleButton>
+            <ToggleButton value="gb"><Image src={gbFlag} height="20" /></ToggleButton>
+            <ToggleButton value="us"><Image src={usFlag} height="20" /></ToggleButton>
+          </ToggleButtonGroup>
 
-        <ToggleButtonGroup name="language" type="radio" onChange={this.onSelectedLanguageChange}>
-          <ToggleButton value="en" defaultChecked>English</ToggleButton>
-          <ToggleButton value="de">German</ToggleButton>
-          <ToggleButton value="es">Spanish</ToggleButton>
-        </ToggleButtonGroup>
-      </div>
+          <ToggleButtonGroup name="language" type="radio" onChange={this.onSelectedLanguageChange}
+                             defaultValue="en">
+            <ToggleButton value="en"><Image src={enFlag} height="20" /></ToggleButton>
+            <ToggleButton value="de"><Image src={deFlag} height="20" /></ToggleButton>
+            <ToggleButton value="es"><Image src={esFlag} height="20" /></ToggleButton>
+          </ToggleButtonGroup>
+        </Card.Body>
+      </Card>
     );
   }
 }

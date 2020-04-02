@@ -1,13 +1,16 @@
 import React from 'react';
 
+import Card from 'react-bootstrap/Card';
+
 class Statistics extends React.Component {
   render(){
     console.log(this.props.statistics);
 
     return (
-      <div className="statistics">
-        <div>{this.props.statistics.TotalRecovered} recovered</div>
-      </div>
+      <Card>
+        <Card.Header>Good News</Card.Header>
+        <Card.Title>{this.props.statistics} recovered</Card.Title>
+      </Card>
     );
   }
 }

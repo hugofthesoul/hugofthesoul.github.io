@@ -30,7 +30,6 @@ class FilterBar extends React.Component {
       }
     };
 
-    this.onStatisticsResultsChange = props.onStatisticsResultsChange;
     this.onSearchResultsChange = props.onSearchResultsChange;
     this.searchQuery = React.createRef();
     this.toggleAsc = this.toggleAsc.bind(this);
@@ -67,23 +66,6 @@ class FilterBar extends React.Component {
 
   onSearch(e){
     var component = this;
-
-    axios({
-      method: 'get',
-      url: 'https://api.covid19api.com/summary',
-      responseType: 'json'
-    }).then(function (response) {
-      // handle success
-      for (var i in response.data.Countries){
-        if (response.data.Countries[i].Country === component.state.selectedCountry.name){
-          component.onStatisticsResultsChange(response.data.Countries[i]);
-        }
-      }
-    })
-    .catch(function (error) {
-      // handle error
-      console.log(error);
-    });
 
     axios({
       method: 'get',

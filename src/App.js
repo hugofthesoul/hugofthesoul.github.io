@@ -13,16 +13,14 @@ class App extends React.Component {
     super(props);
     this.state = {
       embedUrl : "",
-      statisticsResults: {
-        TotalRecovered: 0
-      },
+      statistics: 0,
       searchResults: { 
         videos: [] 
       }
     };
 
     this.onVideoChange = this.onVideoChange.bind(this);
-    this.onStatisticsResultsChange = this.onStatisticsResultsChange.bind(this);
+    this.onStatisticsChange = this.onStatisticsChange.bind(this);
     this.onSearchResultsChange = this.onSearchResultsChange.bind(this);
   }
 
@@ -30,8 +28,8 @@ class App extends React.Component {
     this.setState({ embedUrl: results })
   }
 
-  onStatisticsResultsChange(results){
-    this.setState({ statisticsResults: results })
+  onStatisticsChange(results){
+    this.setState({ statistics: results })
   }
 
   onSearchResultsChange(results){
@@ -41,24 +39,23 @@ class App extends React.Component {
   render(){
     return (
       <div className="App">
-        <FilterBar onStatisticsResultsChange={this.onStatisticsResultsChange}
-                   onSearchResultsChange={this.onSearchResultsChange} />
-
         <div className="container">
           <div className="row justify-content-sm-center">
             <div className="col-sm-8">
               <Screen embedUrl={this.state.embedUrl} />
             </div>
             <div className="col-sm-4">
-              <Control onVideoChange={this.onVideoChange} />
+              <Control onVideoChange={this.onVideoChange}
+                       onStatisticsChange={this.onStatisticsChange} />
+              <Statistics statistics={this.state.statistics} />
             </div>
           </div>
         </div>
 
+        <FilterBar onSearchResultsChange={this.onSearchResultsChange} />
         <div className="container">
           <div className="row justify-content-sm-center">
             <div className="col-sm-6">
-              <Statistics statistics={this.state.statisticsResults} />
               <VideoList videos={this.state.searchResults.videos} />
             </div>
           </div>
