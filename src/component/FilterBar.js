@@ -88,21 +88,12 @@ class FilterBar extends React.Component {
 
     axios({
       method: 'get',
-      url: 'https://www.googleapis.com/youtube/v3/search',
+      url: 'http://hugsoulbackend-env.eba-hbpvup7p.us-east-2.elasticbeanstalk.com/videos',
       responseType: 'json',
       params: {
-        // TODO: How to inject API key from GitHub secrets?
-        key: "",
-        part: "snippet",
-        maxResults: 3,
-        order: this.state.sortBy.field.field,
+        category: this.searchQuery.current.value,
         regionCode: this.state.selectedCountry.code,
-        relevanceLanguage: this.state.selectedCountry.language,
-        safeSearch: "strict",
-        type: "video",
-        videoDuration: "short",
-        videoEmbeddable: true,
-        q: this.searchQuery.current.value
+        maxResults: 3
       }
     }).then(function (response) {
       // handle success
