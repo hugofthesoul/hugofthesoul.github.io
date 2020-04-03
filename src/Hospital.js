@@ -6,7 +6,7 @@ import Container from 'react-bootstrap/Container';
 import Col from 'react-bootstrap/Col';
 import Row from 'react-bootstrap/Row';
 
-class Login extends React.Component {
+class Hospital extends React.Component {
   render(){
     return (
       <Container>
@@ -35,4 +35,4 @@ class Login extends React.Component {
   }
 }
 
-export default Login;
+export default Hospital;

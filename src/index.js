@@ -7,12 +7,18 @@ import {
   Switch,
   Route
 } from 'react-router-dom';
+
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faUser } from '@fortawesome/free-solid-svg-icons'
+import ImgLogo from './image/logo.png';
 import './index.css';
 
-import ImgLogo from './image/logo.png';
+import Home from './App';
 import App from './App';
+import GetHug from './Hospital';
+import Hospital from './Hospital';
 import About from './About';
-import Login from './Login';
+import Login from './About';
 
 import * as serviceWorker from './serviceWorker';
 
@@ -33,10 +39,19 @@ ReactDOM.render((
       <Navbar.Collapse id="responsive-navbar-nav">
         <Nav>
           <Nav.Item>
-            <Nav.Link href="/#login">Login</Nav.Link>
+            <Nav.Link href="/#hug-tv">Hug TV</Nav.Link>
+          </Nav.Item>
+          <Nav.Item>
+            <Nav.Link href="/#hugs">Get Hugs</Nav.Link>
+          </Nav.Item>
+          <Nav.Item>
+            <Nav.Link href="/#hospital">Hugs per Hospital</Nav.Link>
           </Nav.Item>
           <Nav.Item>
             <Nav.Link href="/#about">About</Nav.Link>
+          </Nav.Item>
+          <Nav.Item>
+            <Nav.Link href="/#login"><FontAwesomeIcon icon={faUser} /></Nav.Link>
           </Nav.Item>
         </Nav>
       </Navbar.Collapse>
@@ -44,7 +59,19 @@ ReactDOM.render((
     <Router basename="/">
       <Switch>
         <Route exact path="/">
+          <Home />
+        </Route>
+        <Route path="/hug-tv">
           <App />
+        </Route>
+        <Route path="/hugs">
+          <GetHug />
+        </Route>
+        <Route path="/hospital">
+          <Hospital />
+        </Route>
+        <Route path="/about">
+          <About />
         </Route>
         <Route path="/login">
           <Login />
