@@ -16,27 +16,16 @@ class App extends React.Component {
     super(props);
     this.state = {
       embedUrl : "",
-      statistics: 0,
-      searchResults: { 
-        videos: [] 
-      }
+      statistics: 0
     };
-
-    this.onVideoChange = this.onVideoChange.bind(this);
-    this.onStatisticsChange = this.onStatisticsChange.bind(this);
-    this.onSearchResultsChange = this.onSearchResultsChange.bind(this);
   }
 
-  onVideoChange(results){
+  onPlaylistChange = (results) => {
     this.setState({ embedUrl: results })
   }
 
-  onStatisticsChange(results){
+  onStatisticsChange = (results) => {
     this.setState({ statistics: results })
-  }
-
-  onSearchResultsChange(results){
-    this.setState({ searchResults: results })
   }
 
   render(){
@@ -49,7 +38,7 @@ class App extends React.Component {
             <Playlist />
           </Col>
           <Col md={4} lg={4}>
-            <Control onVideoChange={this.onVideoChange}
+            <Control onPlaylistChange={this.onPlaylistChange}
                      onStatisticsChange={this.onStatisticsChange} />
             <HowToHug />
           </Col>

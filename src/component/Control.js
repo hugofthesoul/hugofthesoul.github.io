@@ -13,54 +13,49 @@ import LanguageTuner from './LanguageTuner';
 import VideoCountTuner from './VideoCountTuner';
 
 import countries from '../data/countries.json';
-import search from '../data/search.json';
 
 class Control extends React.Component {
   constructor(props){
     super(props);
 
     this.state = {
+      selectedChannel: "gratitude",
+      selectedVideoCount: 5,
+      selectedDate: new Date(),
       selectedCountry: "us",
       selectedLanguage: "en"
     };
 
+    this.getPlaylist();
     this.getStatistics();
-    this.onStatisticsChange = props.onStatisticsChange;
-    this.onVideoChange = props.onVideoChange;
 
-    this.onSelectedChannelChange = this.onSelectedChannelChange.bind(this);
-    this.onSelectedCountryChange = this.onSelectedCountryChange.bind(this);
-    this.onSelectedLanguageChange = this.onSelectedLanguageChange.bind(this);
+    this.onPlaylistChange = props.onPlaylistChange;
+    this.onStatisticsChange = props.onStatisticsChange;
   }
 
-  onSelectedChannelChange(item){
+  getPlaylist(){
     var component = this;
-
-    var searchTerm = search[this.state.selectedLanguage][item];
 
     axios({
       method: 'get',
       url: 'http://hugsoulbackend-env.eba-hbpvup7p.us-east-2.elasticbeanstalk.com/videos',
       responseType: 'json',
       params: {
-        category: searchTerm,
+        category: this.state.selectedChannel,
         regionCode: this.state.selectedCountry,
-        maxResults: 1
+        languageCode: this.state.selectedLanguage,
+        publishedDate: this.state.selectedDate,
+        maxResults: this.state.selectedVideoCount
       }
     }).then(function (response) {
       // handle success
       console.log(response);
-      component.onVideoChange(`https://www.youtube.com/embed/${response.data.items[0].id.videoId}`);
+      component.onPlaylistChange(`https://www.youtube.com/embed/${response.data.items[0].id.videoId}`);
     })
     .catch(function (error) {
       // handle error
       console.log(error);
     });
-  }
-
-  onSelectedCountryChange(item){
-    this.setState({ selectedCountry: item },
-                  () => this.getStatistics());
   }
 
   getStatistics(){
@@ -91,8 +86,30 @@ class Control extends React.Component {
     });
   }
 
-  onSelectedLanguageChange(item){
-    this.setState({ selectedLanguage: item });
+  onSelectedChannelChange = (item) => {
+    this.setState({ selectedChannel: item },
+                  () => this.getPlaylist());
+  }
+
+  onSelectedVideoCountChange = (item) => {
+    this.setState({ selectedVideoCount: item });
+  }
+
+  onSelectedDateChange = (item) => {
+    this.setState({ selectedDate: item });
+  }
+
+  onSelectedCountryChange = (item) => {
+    this.setState({ selectedCountry: item },
+                  () => {
+                    this.getPlaylist();
+                    this.getStatistics();
+                  });
+  }
+
+  onSelectedLanguageChange = (item) => {
+    this.setState({ selectedLanguage: item },
+                  () => this.getPlaylist());
   }
 
   render(){
