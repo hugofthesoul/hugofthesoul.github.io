@@ -8,10 +8,12 @@ import {
   Route
 } from 'react-router-dom';
 import './index.css';
-import ImgLogo from './logo.svg';
+
+import ImgLogo from './image/logo.png';
 import App from './App';
 import About from './About';
 import Login from './Login';
+
 import * as serviceWorker from './serviceWorker';
 
 ReactDOM.render((
