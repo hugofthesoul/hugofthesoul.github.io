@@ -11,6 +11,7 @@ import './index.css';
 import ImgLogo from './logo.svg';
 import App from './App';
 import About from './About';
+import Login from './Login';
 import * as serviceWorker from './serviceWorker';
 
 ReactDOM.render((
@@ -30,6 +31,9 @@ ReactDOM.render((
       <Navbar.Collapse id="responsive-navbar-nav">
         <Nav>
           <Nav.Item>
+            <Nav.Link href="/#login">Login</Nav.Link>
+          </Nav.Item>
+          <Nav.Item>
             <Nav.Link href="/#about">About</Nav.Link>
           </Nav.Item>
         </Nav>
@@ -39,6 +43,9 @@ ReactDOM.render((
       <Switch>
         <Route exact path="/">
           <App />
+        </Route>
+        <Route path="/login">
+          <Login />
         </Route>
         <Route path="/about">
           <About />
