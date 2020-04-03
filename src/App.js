@@ -1,10 +1,12 @@
 import React from 'react';
 
+import Col from 'react-bootstrap/Col';
+import Container from 'react-bootstrap/Container';
+import Row from 'react-bootstrap/Row';
+
 import Control from './component/Control';
-import FilterBar from './component/FilterBar';
 import Screen from './component/Screen';
 import Statistics from './component/Statistics';
-import VideoList from './component/VideoList';
 
 import './App.scss';
 
@@ -38,29 +40,18 @@ class App extends React.Component {
 
   render(){
     return (
-      <div className="App">
-        <div className="container">
-          <div className="row justify-content-sm-center">
-            <div className="col-sm-8">
-              <Screen embedUrl={this.state.embedUrl} />
-            </div>
-            <div className="col-sm-4">
-              <Control onVideoChange={this.onVideoChange}
-                       onStatisticsChange={this.onStatisticsChange} />
-              <Statistics statistics={this.state.statistics} />
-            </div>
-          </div>
-        </div>
-
-        <FilterBar onSearchResultsChange={this.onSearchResultsChange} />
-        <div className="container">
-          <div className="row justify-content-sm-center">
-            <div className="col-sm-6">
-              <VideoList videos={this.state.searchResults.videos} />
-            </div>
-          </div>
-        </div>
-      </div>
+      <Container className="App">
+        <Row className="row justify-content-sm-center">
+          <Col md={8} lg={8}>
+            <Screen embedUrl={this.state.embedUrl} />
+          </Col>
+          <Col md={4} lg={4}>
+            <Control onVideoChange={this.onVideoChange}
+                     onStatisticsChange={this.onStatisticsChange} />
+            <Statistics statistics={this.state.statistics} />
+          </Col>
+        </Row>
+      </Container>
     );
   }
 }

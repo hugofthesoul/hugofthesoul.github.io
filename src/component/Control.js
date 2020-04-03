@@ -19,6 +19,14 @@ import esFlag from '../image/spain_640.png';
 import gbFlag from '../image/united_kingdom_640.png';
 import usFlag from '../image/united_states_of_america_640.png';
 
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { 
+  faDove,
+  faUserMd, 
+  faHandsHelping,
+  faHeart
+} from '@fortawesome/free-solid-svg-icons'
+
 class Control extends React.Component {
   constructor(props){
     super(props);
@@ -106,11 +114,18 @@ class Control extends React.Component {
           <Card.Title>Remote Control</Card.Title>
           <Card.Text>Try out our channels</Card.Text>
           <ToggleButtonGroup name="channel" type="radio" onChange={this.onSelectedChannelChange}>
-            <ToggleButton value="gratitude" size="lg">Gratitude</ToggleButton>
-            <ToggleButton value="kindness" size="lg">Kindness</ToggleButton>
-            <br/>
-            <ToggleButton value="miricle" size="lg">Miricle</ToggleButton>
-            <ToggleButton value="doctors" size="lg">Doctors</ToggleButton>
+            <ToggleButton value="gratitude" size="lg" title="Gratitude">
+              <FontAwesomeIcon icon={faHandsHelping} />
+            </ToggleButton>
+            <ToggleButton value="kindness" size="lg" title="Kindness">
+              <FontAwesomeIcon icon={faHeart} />
+            </ToggleButton>
+            <ToggleButton value="miracle" size="lg" title="Miracles">
+              <FontAwesomeIcon icon={faDove} />
+            </ToggleButton>
+            <ToggleButton value="doctors" size="lg" title="Doctors">
+              <FontAwesomeIcon icon={faUserMd} />
+            </ToggleButton>
           </ToggleButtonGroup>
 
           <ToggleButtonGroup name="country" type="radio" onChange={this.onSelectedCountryChange}
