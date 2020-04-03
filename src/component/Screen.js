@@ -7,7 +7,6 @@ class Screen extends React.Component {
     console.log(this.props.embedUrl);
 
     return (
-      <div>
       <Card>
         <Card.Body>
           <Card.Title>Hope TV</Card.Title>
@@ -19,14 +18,6 @@ class Screen extends React.Component {
           </iframe>
         </Card.Body>
       </Card>
-      <Card>
-        <Card.Body>
-          <Card.Text>
-            To see your video here upload to YouTube with hashtag ...
-          </Card.Text>
-        </Card.Body>
-      </Card>
-      </div>
     );
   }
 }

@@ -2,7 +2,7 @@ import React from 'react';
 
 import Card from 'react-bootstrap/Card';
 
-class DatePicker extends React.Component {
+class DateTuner extends React.Component {
   render(){
     return (
       <Card>
@@ -16,4 +16,4 @@ class DatePicker extends React.Component {
   }
 }
 
-export default DatePicker;
+export default DateTuner;

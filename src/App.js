@@ -4,14 +4,10 @@ import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 
 import Control from './component/Control';
-import CountryPicker from './component/CountryPicker';
-import DatePicker from './component/DatePicker';
 import HowToHug from './component/HowToHug';
-import LanguagePicker from './component/LanguagePicker';
 import Playlist from './component/Playlist';
 import Screen from './component/Screen';
 import Statistics from './component/Statistics';
-import Tuner from './component/Tuner';
 
 import './App.scss';
 
@@ -55,16 +51,6 @@ class App extends React.Component {
           <Col md={4} lg={4}>
             <Control onVideoChange={this.onVideoChange}
                      onStatisticsChange={this.onStatisticsChange} />
-            <Row>
-              <Col>
-                <Tuner />
-                <CountryPicker />
-              </Col>
-              <Col>
-                <DatePicker />
-                <LanguagePicker />
-              </Col>
-            </Row>
             <HowToHug />
           </Col>
         </Row>
