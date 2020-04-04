@@ -15,13 +15,14 @@ class App extends React.Component {
   constructor(props){
     super(props);
     this.state = {
-      embedUrl : "",
+      videos: [],
+      selectedVideo: 0,
       statistics: 0
     };
   }
 
   onPlaylistChange = (results) => {
-    this.setState({ embedUrl: results })
+    this.setState({ videos: results })
   }
 
   onStatisticsChange = (results) => {
@@ -33,7 +34,8 @@ class App extends React.Component {
       <Container className="App">
         <Row className="row justify-content-sm-center">
           <Col md={8} lg={8}>
-            <Screen embedUrl={this.state.embedUrl} />
+            {this.state.videos.length > 0 &&
+              <Screen embedUrl={`https://www.youtube.com/embed/${this.state.videos[this.state.selectedVideo].snippet.resourceId.videoId}`} />}
             <Statistics statistics={this.state.statistics} />
             <Playlist />
           </Col>
