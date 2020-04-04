@@ -18,7 +18,7 @@ class Hospital extends React.Component {
           <Card.Subtitle><i>- Jermaine</i></Card.Subtitle>
         </Card>
         <Card>
-          <Card.Text>Let me know what you want me to put for you.</Card.Text>
+          <Card.Text>You are not alone. We are fighting with you. </Card.Text>
           <Card.Subtitle><i>- Kersing</i></Card.Subtitle>
         </Card>
         <Card>
@@ -26,7 +26,7 @@ class Hospital extends React.Component {
           <Card.Subtitle><i>- Mattias</i></Card.Subtitle>
         </Card>
         <Card>
-          <Card.Text>We can give hope because we have hope.</Card.Text>
+          <Card.Text>We share hope because we have hope.</Card.Text>
           <Card.Subtitle><i>- Peter</i></Card.Subtitle>
         </Card>
         <Card>

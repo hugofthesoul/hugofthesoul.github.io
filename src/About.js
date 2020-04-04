@@ -31,7 +31,7 @@ class About extends React.Component {
         <Row className="mb-4">
           <Col lg={8} md={8}>
             <h2><FontAwesomeIcon icon={faSmile} fixedWidth /> Purpose</h2>
-            <p class="text-light">
+            <p class="text-orange">
               As the world battles COVID-19 many dashboards and visualizations have been created
               to track the spread of the virus. We list some examples below:
             </p>
@@ -40,7 +40,7 @@ class About extends React.Component {
               <li><a href="https://coronavirus.jhu.edu/map.html">Coronavirus COVID-19 Global Cases by the Center for Systems Science and Engineering (CSSE) at Johns Hopkins University</a></li>
               <li><a href="https://nssac.bii.virginia.edu/covid-19/dashboard/">University of Virginia Biocomplexity Institute COVID-19 Surveillance Dashboard</a></li>
             </ul>
-            <p class="text-light">
+            <p class="text-orange">
               Why is <em>everyone</em> so focused on what is going wrong?
               We felt like something was missing and a change in perspective was necessary.
               Why not  highlight the good things that are happening because of COVID-19.
@@ -56,7 +56,7 @@ class About extends React.Component {
         <Row className="mb-4">
           <Col lg={8} md={8}>
             <h2><FontAwesomeIcon icon={faCross} fixedWidth /> Backstory</h2>
-            <p class="text-light">
+            <p class="text-orange">
               Our founder was moved by the suicide of an Italian nurse and wondered how
               we might prevent further suicides of medical care providers amidst the COVID-19 pandemic.
               She proposed this project (<a href="https://devpost.com/software/abrazo-del-alma">abrazo del alma</a>)
@@ -70,12 +70,12 @@ class About extends React.Component {
         <Row>
           <Col lg={8} md={8}>
             <h2><FontAwesomeIcon icon={faUsers} fixedWidth /> Connect</h2>
-            <p class="text-light">
+            <p class="text-orange">
               Excited about what we're building next? Want to help out? If so,
               please subscribe to our <a href="https://groups.google.com/forum/#!forum/hugofthesoul">mailing list </a>
               to learn about what we're up to.
             </p>
-            <p class="text-light">
+            <p class="text-orange">
               <a href="https://github.com/hugofthesoul" title="Github">
                 <FontAwesomeIcon icon={faGithub} size="2x" fixedWidth />
               </a>

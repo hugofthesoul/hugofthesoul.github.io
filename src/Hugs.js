@@ -28,7 +28,7 @@ class Hugs extends React.Component {
         <Row className="mb-4">
           <Col lg={8} md={8}>
             <h2 className="title"><FontAwesomeIcon icon={faPray} fixedWidth /> Roger</h2>
-            <p className="text-white">
+            <p className="text-orange">
               Happy for you to call me and I'll pray for you.
             </p>
             <Button><FontAwesomeIcon icon={faWhatsapp} fixedWidth /> Connect</Button>
@@ -40,7 +40,7 @@ class Hugs extends React.Component {
         <Row>
           <Col lg={8} md={8}>
             <h2 className="title"><FontAwesomeIcon icon={faPeopleCarry} fixedWidth /> Rommy</h2>
-            <p className="text-white">
+            <p className="text-orange">
               I'd love to hear about your day. Keep going!
             </p>
             <Button><FontAwesomeIcon icon={faWhatsapp} fixedWidth /> Connect</Button>

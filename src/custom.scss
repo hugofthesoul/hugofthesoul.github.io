@@ -58,6 +58,10 @@ $code-color: $color-channel-blue;
 
 /* --- custom classes --- */
 
+.text-orange {
+  color: $color-orange;
+}
+
 .navigation-bar {
   background-color: $color-dark-purple !important;
   font-family: $global-font-family;

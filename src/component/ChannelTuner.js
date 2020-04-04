@@ -76,7 +76,7 @@ class ChannelTuner extends React.Component {
         <Card className={this.state.selectedToggleIndex === 3 ? 'active' : ''}>
           <Card.Header>
             <Accordion.Toggle as={Button} value="doctors" onClick={this.handleToggle(3)} variant="link" eventKey="3">
-              UNITED
+              UNITY
             </Accordion.Toggle>
           </Card.Header>
           <Accordion.Collapse eventKey="3">
