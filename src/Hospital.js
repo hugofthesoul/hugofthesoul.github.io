@@ -26,11 +26,14 @@ class Hospital extends React.Component {
           <Card.Subtitle><i>- Mattias</i></Card.Subtitle>
         </Card>
         <Card>
-          <Card.Text>We share hope because we have hope.</Card.Text>
+          <Card.Text>We want to share hope because we have hope.</Card.Text>
           <Card.Subtitle><i>- Peter</i></Card.Subtitle>
         </Card>
         <Card>
-          <Card.Text>Let me know what you want me to put for you.</Card.Text>
+          <Card.Text>
+            <p>You guys are the real fighter, we engineers, scientists are there for you to make your life better. We can't feel the trauma you undergo by patients & their family in normal days and now world is going thru phase of pandemic as COVID-19 you people are working day & night to cure the patient without thinking about your health.</p>
+            <p>We hope to reduce your depression thru various unconditional supports and see you guys smiling. Thank You Doctors & Medical Helpers.</p>
+          </Card.Text>
           <Card.Subtitle><i>- Pratyoosh</i></Card.Subtitle>
         </Card>
         <Card>
