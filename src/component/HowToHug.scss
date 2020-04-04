@@ -1,0 +1,18 @@
+@import '../custom';
+
+.hug-howto-section {
+  .lead {
+    color: $color-orange;
+    font-size: 17px;
+    margin-top: 7px;
+  }
+
+  .btn-default {
+    background-color: $color-orange;
+    font-family: $global-font-family;
+    font-size: 20px;
+    height: 90px;
+    line-height: $spacer;
+    width: 100%;
+  }
+}

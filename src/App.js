@@ -1,50 +1,55 @@
 import React from 'react';
+import Col from 'react-bootstrap/Col';
+import Container from 'react-bootstrap/Container';
+import Row from 'react-bootstrap/Row';
 
-import FilterBar from './component/FilterBar';
-import Statistics from './component/Statistics';
-import VideoList from './component/VideoList';
+import Control from './component/Control';
+import HowToHug from './component/HowToHug';
+import Playlist from './component/Playlist';
+import Screen from './component/Screen';
+import NewsMarquee from './component/NewsMarquee';
 
-import './App.scss';
+import './App.scss'
 
 class App extends React.Component {
-
   constructor(props){
     super(props);
     this.state = {
-      statisticsResults: {
-        TotalRecovered: 0
-      },
-      searchResults: { 
-        videos: [] 
-      }
+      videos: [],
+      selectedVideo: 0,
+      totalRecovered: 0
     };
-
-    this.onStatisticsResultsChange = this.onStatisticsResultsChange.bind(this);
-    this.onSearchResultsChange = this.onSearchResultsChange.bind(this);
   }
 
-  onStatisticsResultsChange(results){
-    this.setState({ statisticsResults: results })
+  onPlaylistChange = (results) => {
+    this.setState({ videos: results });
   }
 
-  onSearchResultsChange(results){
-    this.setState({ searchResults: results })
+  onVideoChange = (results) => {
+    this.setState({ selectedVideo: results });
+  }
+
+  onStatisticsChange = (totalRecovered) => {
+    this.setState({ totalRecovered: totalRecovered });
   }
 
   render(){
     return (
-      <div className="App">
-        <FilterBar onStatisticsResultsChange={this.onStatisticsResultsChange}
-                   onSearchResultsChange={this.onSearchResultsChange} />
-        <div className="container">
-          <div className="row justify-content-sm-center">
-            <div className="col-sm-6">
-              <Statistics statistics={this.state.statisticsResults} />
-              <VideoList videos={this.state.searchResults.videos} />
-            </div>
-          </div>
-        </div>
-      </div>
+      <Container className="App">
+        <Row className="row justify-content-sm-center">
+          <Col md={12} lg={8} className="mb-4">
+            {this.state.videos.length > 0 &&
+              <Screen embedUrl={`https://www.youtube.com/embed/${this.state.videos[this.state.selectedVideo].snippet.resourceId.videoId}`} />}
+            <NewsMarquee totalRecovered={this.state.totalRecovered} />
+            <Playlist videos={this.state.videos} onVideoChange={this.onVideoChange}/>
+          </Col>
+          <Col md={12} lg={4} className="mb-4">
+            <Control onPlaylistChange={this.onPlaylistChange}
+                     onStatisticsChange={this.onStatisticsChange} />
+            <HowToHug />
+          </Col>
+        </Row>
+      </Container>
     );
   }
 }

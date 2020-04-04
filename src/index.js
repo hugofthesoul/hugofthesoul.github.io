@@ -1,4 +1,6 @@
 import React from 'react';
+
+import Container from 'react-bootstrap/Container';
 import Navbar from 'react-bootstrap/Navbar';
 import Nav from 'react-bootstrap/Nav';
 import ReactDOM from 'react-dom';
@@ -7,41 +9,65 @@ import {
   Switch,
   Route
 } from 'react-router-dom';
-import './index.css';
-import ImgLogo from './logo.svg';
+
+import Home from './App';
 import App from './App';
+import GetHug from './Hugs';
+import Hospital from './Hospital';
 import About from './About';
+import Login from './App';
+
 import * as serviceWorker from './serviceWorker';
 
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faUser } from '@fortawesome/free-solid-svg-icons'
+import ImgLogo from './image/logo-transparent.png';
+import './index.scss';
+
 ReactDOM.render((
-  <React.StrictMode>
-    <Navbar collapseOnSelect sticky="top" bg="dark" variant="dark">
-      <Navbar.Brand href="/">
-        <img
-          alt="logo"
-          src={ImgLogo}
-          width="30"
-          height="30"
-          className="d-inline-block align-top"
-        />{' '}
-        Hug of the Soul
-      </Navbar.Brand>
-      <Navbar.Toggle aria-controls="responsive-navbar-nav" />
-      <Navbar.Collapse id="responsive-navbar-nav">
+  <React.StrictMode>       
+    <Navbar bg="dark" variant="dark" expand="lg" className="fixed-top navigation-bar">
+      <Container>
+      <Navbar.Brand href="/#"><img alt="Hug of the Soul" src={ImgLogo} width="30" height="30" /></Navbar.Brand>
+      <Navbar.Toggle aria-controls="basic-navbar-nav" />
+      <Navbar.Collapse id="basic-navbar-nav">
+        <Nav>                    
+          <Nav.Link href="/#home">Home</Nav.Link>
+          <Nav.Link href="/#hug-tv">Hug TV</Nav.Link>
+          <Nav.Link href="/#hugs">Get Hugs</Nav.Link>
+          <Nav.Link href="/#hospital">Hugs per Hospital</Nav.Link>          
+          <Nav.Link href="/#about">About</Nav.Link>          
+        </Nav>
+        <div class="flex-fill">&nbsp;</div>
         <Nav>
-          <Nav.Item>
-            <Nav.Link href="/#about">About</Nav.Link>
-          </Nav.Item>
+          <Nav.Link href="/#login"><FontAwesomeIcon icon={faUser} /></Nav.Link>
         </Nav>
       </Navbar.Collapse>
+      </Container>
     </Navbar>
+    <br />
     <Router basename="/">
       <Switch>
         <Route exact path="/">
+          <Home />
+        </Route>
+        <Route exact path="/home">
+          <Home />
+        </Route>
+        <Route path="/hug-tv">
           <App />
+        </Route>
+        <Route path="/hugs">
+          <GetHug />
+        </Route>
+        <Route path="/hospital">
+          <Hospital />
         </Route>
         <Route path="/about">
           <About />
+        </Route>
+        <Route path="/login">
+          <Login />
         </Route>
       </Switch>
     </Router>
