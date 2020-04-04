@@ -36,7 +36,7 @@ class Control extends React.Component {
 
     axios({
       method: 'get',
-      url: 'http://hugsoulbackend-env.eba-hbpvup7p.us-east-2.elasticbeanstalk.com/videos',
+      url: 'https://hug-of-soul.herokuapp.com/videos',
       responseType: 'json',
       params: {
         category: this.state.selectedChannel,
