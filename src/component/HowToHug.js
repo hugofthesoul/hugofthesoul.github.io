@@ -40,9 +40,18 @@ class HowToHug extends React.Component {
           <Modal.Header closeButton>
             <Modal.Title>How to Hug</Modal.Title>
           </Modal.Header>
-          <Modal.Body>1. Upload your video to YouTube
-                 <br/>2. Send us the link: hugofthesoul@gmail.com
-                 <br/>3. If doctors like your video it will appear
+          <Modal.Body>
+            <ol>
+              <li>
+                Upload your video to YouTube
+              </li>
+              <li>
+                Send us the link: <a href="mailto:hugofthesoul@gmail.com">hugofthesoul@gmail.com</a>
+              </li>
+              <li>
+                If doctors like your video it will appear
+              </li>
+            </ol>
           </Modal.Body>
         </Modal>
       </div>
