@@ -1,25 +1,41 @@
 import React from 'react';
 
 import Card from 'react-bootstrap/Card';
+import Dropdown from 'react-bootstrap/Dropdown';
 import Image from 'react-bootstrap/Image';
-import ToggleButton from 'react-bootstrap/ToggleButton';
-import ToggleButtonGroup from 'react-bootstrap/ToggleButtonGroup';
 
 import enFlag from '../image/england_640.png';
 import deFlag from '../image/germany_640.png';
 import esFlag from '../image/spain_640.png';
 
 class LanguageTuner extends React.Component {
+  constructor(props){
+    super(props);
+
+    this.state = {
+      selectedLanguage: "en"
+    };
+  }
+
+  onSelectedLanguageChange = (item) => {
+    this.setState({ selectedLanguage: item },
+                  () => this.props.onSelectedLanguageChange(item));
+  }
+
   render(){
     return (
       <Card>
         <Card.Body>
-          <ToggleButtonGroup name="language" type="radio" onChange={this.props.onSelectedLanguageChange}
-                             defaultValue="en">
-            <ToggleButton value="en"><Image src={enFlag} height="20" /></ToggleButton>
-            <ToggleButton value="de"><Image src={deFlag} height="20" /></ToggleButton>
-            <ToggleButton value="es"><Image src={esFlag} height="20" /></ToggleButton>
-          </ToggleButtonGroup>
+          <Dropdown onSelect={this.onSelectedLanguageChange}>
+            <Dropdown.Toggle>
+              {this.state.selectedLanguage}
+            </Dropdown.Toggle>
+            <Dropdown.Menu>
+              <Dropdown.Item eventKey="en"><Image src={enFlag} height="20" /></Dropdown.Item>
+              <Dropdown.Item eventKey="de"><Image src={deFlag} height="20" /></Dropdown.Item>
+              <Dropdown.Item eventKey="es"><Image src={esFlag} height="20" /></Dropdown.Item>
+            </Dropdown.Menu>
+          </Dropdown>
         </Card.Body>
       </Card>
     );
