@@ -8,13 +8,13 @@ class Hospital extends React.Component {
   render(){
     return (
       <Container className="hospital">
-        <h1 className="title">@Hospital</h1>
+        <h1 className="title mb-4">@Hospital</h1>
         <Card>
           <Card.Text>Let me know what you want me to put for you.</Card.Text>
           <Card.Subtitle><i>- Jay</i></Card.Subtitle>
         </Card>
         <Card>
-          <Card.Text>Let me know what you want me to put for you.</Card.Text>
+          <Card.Text>May God sustain and strenghten you through this difficult hour.</Card.Text>
           <Card.Subtitle><i>- Jermaine</i></Card.Subtitle>
         </Card>
         <Card>

@@ -10,11 +10,11 @@ import {
   faPray
 } from '@fortawesome/free-solid-svg-icons'
 
-import { 
+import {
   faWhatsapp
 } from '@fortawesome/free-brands-svg-icons'
 
-import './Hugs.scss'
+import './Hugs.scss';
 
 class Hugs extends React.Component {
   render(){
@@ -25,7 +25,7 @@ class Hugs extends React.Component {
             <h1 className="title">Supporters</h1>
           </Col>
         </Row>
-        <Row>
+        <Row className="mb-4">
           <Col lg={8} md={8}>
             <h2 className="title"><FontAwesomeIcon icon={faPray} fixedWidth /> Roger</h2>
             <p className="text-white">
