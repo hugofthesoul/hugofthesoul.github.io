@@ -7,7 +7,7 @@ import Control from './component/Control';
 import HowToHug from './component/HowToHug';
 import Playlist from './component/Playlist';
 import Screen from './component/Screen';
-import Statistics from './component/Statistics';
+import NewsMarquee from './component/NewsMarquee';
 
 import './App.scss'
 
@@ -17,16 +17,16 @@ class App extends React.Component {
     this.state = {
       videos: [],
       selectedVideo: 0,
-      statistics: 0
+      totalRecovered: 0
     };
   }
 
   onPlaylistChange = (results) => {
-    this.setState({ videos: results })
+    this.setState({ videos: results });
   }
 
-  onStatisticsChange = (results) => {
-    this.setState({ statistics: results })
+  onStatisticsChange = (totalRecovered) => {
+    this.setState({ totalRecovered: totalRecovered });
   }
 
   render(){
@@ -36,7 +36,7 @@ class App extends React.Component {
           <Col md={8} lg={8}>
             {this.state.videos.length > 0 &&
               <Screen embedUrl={`https://www.youtube.com/embed/${this.state.videos[this.state.selectedVideo].snippet.resourceId.videoId}`} />}
-            <Statistics statistics={this.state.statistics} />
+            <NewsMarquee totalRecovered={this.state.totalRecovered} />
             <Playlist />
           </Col>
           <Col md={4} lg={4}>
