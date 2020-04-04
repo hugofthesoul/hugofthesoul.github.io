@@ -11,7 +11,7 @@ import {
 
 import Home from './App';
 import App from './App';
-import GetHug from './Hospital';
+import GetHug from './Hugs';
 import Hospital from './Hospital';
 import About from './About';
 import Login from './About';
