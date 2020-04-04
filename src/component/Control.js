@@ -18,7 +18,7 @@ class Control extends React.Component {
 
     this.state = {
       selectedChannel: "gratitude",
-      selectedVideoCount: 5,
+      selectedVideoCount: 10,
       selectedDate: new Date(),
       selectedCountry: "us",
       selectedLanguage: "en"

@@ -7,7 +7,7 @@ class VideoCountTuner extends React.Component {
     super(props);
 
     this.state = {
-      selectedVideoCount: 5
+      selectedVideoCount: 10
     };
   }
 
