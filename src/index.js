@@ -1,5 +1,6 @@
 import React from 'react';
-import Navbar from 'react-bootstrap/Navbar';
+
+import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
 import ReactDOM from 'react-dom';
 import {
@@ -7,11 +8,6 @@ import {
   Switch,
   Route
 } from 'react-router-dom';
-
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faUser } from '@fortawesome/free-solid-svg-icons'
-import ImgLogo from './image/logo.png';
-import './index.css';
 
 import Home from './App';
 import App from './App';
@@ -22,22 +18,16 @@ import Login from './About';
 
 import * as serviceWorker from './serviceWorker';
 
+import './index.scss';
+
 ReactDOM.render((
   <React.StrictMode>
-    <Navbar collapseOnSelect sticky="top" bg="dark" variant="dark">
-      <Navbar.Brand href="/">
-        <img
-          alt="logo"
-          src={ImgLogo}
-          width="30"
-          height="30"
-          className="d-inline-block align-top"
-        />{' '}
-        Hug of the Soul
-      </Navbar.Brand>
-      <Navbar.Toggle aria-controls="responsive-navbar-nav" />
-      <Navbar.Collapse id="responsive-navbar-nav">
-        <Nav>
+    <div className="fixed-top navigation-bar">
+      <Container>
+        <Nav className="justify-content-center">
+          <Nav.Item>
+            <Nav.Link href="/#">Home</Nav.Link>
+          </Nav.Item>
           <Nav.Item>
             <Nav.Link href="/#hug-tv">Hug TV</Nav.Link>
           </Nav.Item>
@@ -50,12 +40,10 @@ ReactDOM.render((
           <Nav.Item>
             <Nav.Link href="/#about">About</Nav.Link>
           </Nav.Item>
-          <Nav.Item>
-            <Nav.Link href="/#login"><FontAwesomeIcon icon={faUser} /></Nav.Link>
-          </Nav.Item>
         </Nav>
-      </Navbar.Collapse>
-    </Navbar>
+      </Container>
+    </div>
+
     <Router basename="/">
       <Switch>
         <Route exact path="/">

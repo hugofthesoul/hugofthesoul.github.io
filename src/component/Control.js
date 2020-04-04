@@ -1,7 +1,6 @@
 import axios from 'axios';
 
 import React from 'react';
-import Card from 'react-bootstrap/Card';
 import Col from 'react-bootstrap/Col';
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
@@ -114,25 +113,21 @@ class Control extends React.Component {
 
   render(){
     return (
-      <Card>
-        <Card.Body>
-          <Card.Title>Remote Control</Card.Title>
-          <Card.Text>Try out our channels</Card.Text>
-          <ChannelTuner onSelectedChannelChange={this.onSelectedChannelChange} />
-          <Container>
-            <Row>
-              <Col>
-                <VideoCountTuner onSelectedVideoCountChange={this.onSelectedVideoCountChange} />
-                <CountryTuner onSelectedCountryChange={this.onSelectedCountryChange} />
-              </Col>
-              <Col>
-                <DateTuner onSelectedDateChange={this.onSelectedDateChange} />
-                <LanguageTuner onSelectedLanguageChange={this.onSelectedLanguageChange} />
-              </Col>
-            </Row>
-          </Container>
-        </Card.Body>
-      </Card>
+      <div>
+        <ChannelTuner onSelectedChannelChange={this.onSelectedChannelChange} />
+        <Container>
+          <Row>
+            <Col>
+              <VideoCountTuner onSelectedVideoCountChange={this.onSelectedVideoCountChange} />
+              <CountryTuner onSelectedCountryChange={this.onSelectedCountryChange} />
+            </Col>
+            <Col>
+              <DateTuner onSelectedDateChange={this.onSelectedDateChange} />
+              <LanguageTuner onSelectedLanguageChange={this.onSelectedLanguageChange} />
+            </Col>
+          </Row>
+        </Container>
+      </div>
     );
   }
 }

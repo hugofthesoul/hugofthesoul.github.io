@@ -1,0 +1,35 @@
+@import "custom";
+
+body {
+  // background-color: $color-black !important;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  padding-top: 74px;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
+.navigation-bar {
+  background-color: $color-dark-purple;
+
+  .nav-link {
+    color: #D7DAE9;
+    font-family: $global-font-family;
+    padding-top: 15px;
+    padding-bottom: 15px;
+
+    &:hover {
+      color: #000;
+    }
+
+    &.active {
+      text-decoration: underline;
+    }
+  }
+}

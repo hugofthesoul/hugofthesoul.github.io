@@ -1,0 +1,32 @@
+@import '../custom';
+
+.channel-tuner-accordion {
+  .card {
+    background-color: $color-channel-blue;
+    border: 0 none;
+    margin-bottom: 20px;
+
+    .card-header {
+      border: 0 none;
+      font-family: "knigsbergregular", "Arial Rounded", sans-serif;
+      padding: 0;
+    }
+
+    .btn {
+      color: $color-black;
+      display: block;
+      font-size: 40px;
+      width: 100%;
+    }
+
+    .collapse {
+      background-color: $color-channel-blue-selected;
+      border-bottom-left-radius: $border-radius;
+      border-bottom-right-radius: $border-radius;
+    }
+
+    .card-body {
+      padding: 30px;
+    }
+  }
+}
