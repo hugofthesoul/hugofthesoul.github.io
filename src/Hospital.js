@@ -1,13 +1,14 @@
 import React from 'react';
 import Card from 'react-bootstrap/Card';
+import Container from 'react-bootstrap/Container';
 
 import './Hospital.scss'
 
 class Hospital extends React.Component {
   render(){
     return (
-      <div className="hospital">
-        <h2 className="title">@Hospital</h2>
+      <Container className="hospital">
+        <h1 className="title">@Hospital</h1>
         <Card>
           <Card.Text>Let me know what you want me to put for you.</Card.Text>
           <Card.Subtitle><i>- Jay</i></Card.Subtitle>
@@ -36,7 +37,7 @@ class Hospital extends React.Component {
           <Card.Text>Let me know what you want me to put for you. In spanish?</Card.Text>
           <Card.Subtitle><i>- Rommy</i></Card.Subtitle>
         </Card>
-      </div>
+      </Container>
     );
   }
 }

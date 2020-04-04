@@ -49,7 +49,7 @@ class HowToHug extends React.Component {
                 Send us the link: <a href="mailto:hugofthesoul@gmail.com">hugofthesoul@gmail.com</a>
               </li>
               <li>
-                If doctors like your video it will appear
+                If doctors like your video then it will appear soon
               </li>
             </ol>
           </Modal.Body>
