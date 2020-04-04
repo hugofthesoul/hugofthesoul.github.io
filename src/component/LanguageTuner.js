@@ -1,6 +1,5 @@
 import React from 'react';
 
-import Card from 'react-bootstrap/Card';
 import Dropdown from 'react-bootstrap/Dropdown';
 import Image from 'react-bootstrap/Image';
 
@@ -24,20 +23,18 @@ class LanguageTuner extends React.Component {
 
   render(){
     return (
-      <Card>
-        <Card.Body>
-          <Dropdown onSelect={this.onSelectedLanguageChange}>
-            <Dropdown.Toggle>
-              {this.state.selectedLanguage}
-            </Dropdown.Toggle>
-            <Dropdown.Menu>
-              <Dropdown.Item eventKey="en"><Image src={enFlag} height="20" /></Dropdown.Item>
-              <Dropdown.Item eventKey="de"><Image src={deFlag} height="20" /></Dropdown.Item>
-              <Dropdown.Item eventKey="es"><Image src={esFlag} height="20" /></Dropdown.Item>
-            </Dropdown.Menu>
-          </Dropdown>
-        </Card.Body>
-      </Card>
+      <div>
+        <Dropdown onSelect={this.onSelectedLanguageChange}>
+          <Dropdown.Toggle>
+            {this.state.selectedLanguage}
+          </Dropdown.Toggle>
+          <Dropdown.Menu>
+            <Dropdown.Item eventKey="en"><Image src={enFlag} height="20" /></Dropdown.Item>
+            <Dropdown.Item eventKey="de"><Image src={deFlag} height="20" /></Dropdown.Item>
+            <Dropdown.Item eventKey="es"><Image src={esFlag} height="20" /></Dropdown.Item>
+          </Dropdown.Menu>
+        </Dropdown>
+      </div>
     );
   }
 }

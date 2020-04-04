@@ -1,6 +1,5 @@
 import React from 'react';
 
-import Card from 'react-bootstrap/Card';
 import Dropdown from 'react-bootstrap/Dropdown';
 import Image from 'react-bootstrap/Image';
 
@@ -26,22 +25,20 @@ class CountryTuner extends React.Component {
 
   render(){
     return (
-      <Card>
-        <Card.Body>
-          <Dropdown onSelect={this.onSelectedCountryChange}>
-            <Dropdown.Toggle>
-              {this.state.selectedCountry}
-            </Dropdown.Toggle>
-            <Dropdown.Menu>
-              <Dropdown.Item eventKey="bo"><Image src={boFlag} height="20" /></Dropdown.Item>
-              <Dropdown.Item eventKey="de"><Image src={deFlag} height="20" /></Dropdown.Item>
-              <Dropdown.Item eventKey="in"><Image src={inFlag} height="20" /></Dropdown.Item>
-              <Dropdown.Item eventKey="gb"><Image src={gbFlag} height="20" /></Dropdown.Item>
-              <Dropdown.Item eventKey="us"><Image src={usFlag} height="20" /></Dropdown.Item>
-            </Dropdown.Menu>
-          </Dropdown>
-        </Card.Body>
-      </Card>
+      <div>
+        <Dropdown onSelect={this.onSelectedCountryChange}>
+          <Dropdown.Toggle>
+            {this.state.selectedCountry}
+          </Dropdown.Toggle>
+          <Dropdown.Menu>
+            <Dropdown.Item eventKey="bo"><Image src={boFlag} height="20" /></Dropdown.Item>
+            <Dropdown.Item eventKey="de"><Image src={deFlag} height="20" /></Dropdown.Item>
+            <Dropdown.Item eventKey="in"><Image src={inFlag} height="20" /></Dropdown.Item>
+            <Dropdown.Item eventKey="gb"><Image src={gbFlag} height="20" /></Dropdown.Item>
+            <Dropdown.Item eventKey="us"><Image src={usFlag} height="20" /></Dropdown.Item>
+          </Dropdown.Menu>
+        </Dropdown>
+      </div>
     );
   }
 }
