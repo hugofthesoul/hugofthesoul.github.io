@@ -27,7 +27,7 @@ class CountryTuner extends React.Component {
 
   render(){
     return (
-      <div class="hug-dropdown-toggle">
+      <div className="hug-dropdown-toggle">
         <Dropdown onSelect={this.onSelectedCountryChange}>
           <Dropdown.Toggle variant="default">
             {this.state.selectedCountry}

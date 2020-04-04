@@ -1,10 +1,10 @@
 import React from 'react';
 import Button from 'react-bootstrap/Button';
-import Card from 'react-bootstrap/Card';
 import Col from 'react-bootstrap/Col';
-import Container from 'react-bootstrap/Container';
 import Modal from 'react-bootstrap/Modal';
 import Row from 'react-bootstrap/Row';
+
+import './HowToHug.scss';
 
 class HowToHug extends React.Component {
   constructor(props){
@@ -24,19 +24,17 @@ class HowToHug extends React.Component {
     const handleShow = () => this.setShow(true);
 
     return (
-      <div>
-        <Container>
-          <Row>
-            <Col md={6}>
-              <Card>
-                <Card.Text>Wanna see your video here? Learn how to do it.</Card.Text>
-              </Card>
-            </Col>
-            <Col md={6}>
-              <Button onClick={handleShow}>HOW TO HUG</Button>
-            </Col>
-          </Row>
-        </Container>
+      <div className="hug-howto-section">
+        <Row>
+          <Col md={5}>
+            <p className="lead">
+              Wanna see your video here? Learn how to do it.
+            </p>
+          </Col>
+          <Col md={7}>
+            <Button variant="default" onClick={handleShow}>HOW TO HUG</Button>
+          </Col>
+        </Row>
 
         <Modal show={this.state.show} onHide={handleClose}>
           <Modal.Header closeButton>

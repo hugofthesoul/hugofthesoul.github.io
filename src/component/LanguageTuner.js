@@ -20,7 +20,7 @@ class LanguageTuner extends React.Component {
 
   render(){
     return (
-      <div class="hug-dropdown-toggle">
+      <div className="hug-dropdown-toggle">
         <Dropdown onSelect={this.onSelectedLanguageChange}>
           <Dropdown.Toggle variant="default">
             {this.state.selectedLanguage}

@@ -26,7 +26,7 @@ class DateTuner extends React.Component {
 
   render(){
     return (
-      <div class="date-tuner">
+      <div className="date-tuner">
         <DatePicker minDate={this.state.minDate} maxDate={this.state.maxDate}
                     value={this.state.selectedDate}
                     onChange={this.onSelectedDateChange} />

@@ -122,7 +122,7 @@ class Control extends React.Component {
             <DateTuner onSelectedDateChange={this.onSelectedDateChange} />
           </Col>
         </Row>
-        <Row>
+        <Row className="mb-3">
           <Col md={6}>
             <CountryTuner onSelectedCountryChange={this.onSelectedCountryChange} />
           </Col>
