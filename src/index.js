@@ -15,7 +15,7 @@ import App from './App';
 import GetHug from './Hugs';
 import Hospital from './Hospital';
 import About from './About';
-import Login from './About';
+import Login from './App';
 
 import * as serviceWorker from './serviceWorker';
 
@@ -28,11 +28,11 @@ ReactDOM.render((
   <React.StrictMode>       
     <Navbar bg="dark" variant="dark" expand="lg" className="fixed-top navigation-bar">
       <Container>
-      <Navbar.Brand href="#home"><img alt="Hug of the Soul" src={ImgLogo} width="30" height="30" /></Navbar.Brand>
+      <Navbar.Brand href="/#"><img alt="Hug of the Soul" src={ImgLogo} width="30" height="30" /></Navbar.Brand>
       <Navbar.Toggle aria-controls="basic-navbar-nav" />
       <Navbar.Collapse id="basic-navbar-nav">
         <Nav>                    
-          <Nav.Link href="/#">Home</Nav.Link>
+          <Nav.Link href="/#home">Home</Nav.Link>
           <Nav.Link href="/#hug-tv">Hug TV</Nav.Link>
           <Nav.Link href="/#hugs">Get Hugs</Nav.Link>
           <Nav.Link href="/#hospital">Hugs per Hospital</Nav.Link>          
@@ -40,7 +40,7 @@ ReactDOM.render((
         </Nav>
         <div class="flex-fill">&nbsp;</div>
         <Nav>
-          <Nav.Link href="/#"><FontAwesomeIcon icon={faUser} /></Nav.Link>
+          <Nav.Link href="/#login"><FontAwesomeIcon icon={faUser} /></Nav.Link>
         </Nav>
       </Navbar.Collapse>
       </Container>
@@ -49,6 +49,9 @@ ReactDOM.render((
     <Router basename="/">
       <Switch>
         <Route exact path="/">
+          <Home />
+        </Route>
+        <Route exact path="/home">
           <Home />
         </Route>
         <Route path="/hug-tv">
@@ -65,9 +68,6 @@ ReactDOM.render((
         </Route>
         <Route path="/login">
           <Login />
-        </Route>
-        <Route path="/about">
-          <About />
         </Route>
       </Switch>
     </Router>
