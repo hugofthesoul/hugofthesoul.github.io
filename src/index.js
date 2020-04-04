@@ -25,18 +25,17 @@ import ImgLogo from './image/logo-transparent.png';
 import './index.scss';
 
 ReactDOM.render((
-  <React.StrictMode>       
+  <React.StrictMode>
     <Navbar bg="dark" variant="dark" expand="lg" className="fixed-top navigation-bar">
       <Container>
       <Navbar.Brand href="/#"><img alt="Hug of the Soul" src={ImgLogo} width="30" height="30" /></Navbar.Brand>
       <Navbar.Toggle aria-controls="basic-navbar-nav" />
       <Navbar.Collapse id="basic-navbar-nav">
-        <Nav>                    
-          <Nav.Link href="/#home">Home</Nav.Link>
+        <Nav>
           <Nav.Link href="/#hug-tv">Hug TV</Nav.Link>
           <Nav.Link href="/#hugs">Get Hugs</Nav.Link>
-          <Nav.Link href="/#hospital">Hugs per Hospital</Nav.Link>          
-          <Nav.Link href="/#about">About</Nav.Link>          
+          <Nav.Link href="/#hospital">Hugs per Hospital</Nav.Link>
+          <Nav.Link href="/#about">About</Nav.Link>
         </Nav>
         <div class="flex-fill">&nbsp;</div>
         <Nav>
