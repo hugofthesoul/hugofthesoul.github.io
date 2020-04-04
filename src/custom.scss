@@ -2,21 +2,77 @@
 @import "~bootstrap/scss/_variables";
 @import "~bootstrap/scss/_mixins";
 
-/* The following block can be included in a custom.scss */
-$color-dark-purple: #445898; //  - Dark Purple/Top Banner/Slider
-$color-light-tan: #F3D2A9; //  - Light Tan/Logo/Text next to How to Hug Button
-$color-channel-blue: #43C3D1; //  - Channel Blue
-$color-channel-blue-selected: #96D9EE; //  - Logo/Channel Blue Selected
-$color-top-links: #D7DAE9; //  - Language and Country/Top Links Light Purple
-$color-orange: #F0B975; //  - How to Hug Orange Button/Font next to it
+// Theme
+
+$color-dark-purple: #445898;            //  - Dark Purple/Top Banner/Slider
+$color-light-tan: #F3D2A9;              //  - Light Tan/Logo/Text next to How to Hug Button
+$color-channel-blue: #43C3D1;           //  - Channel Blue
+$color-channel-blue-selected: #96D9EE;  //  - Logo/Channel Blue Selected
+$color-top-links: #D7DAE9;              //  - Language and Country/Top Links Light Purple
+$color-orange: #F0B975;                 //  - How to Hug Orange Button/Font next to it
 $color-white: $white;
 $color-black: $black;
 
-$body-bg: $black;
-
 $global-font-family: "knigsbergregular", "Arial Rounded", sans-serif;
 
+$dark-color: $color-dark-purple;
+$dark-hover-color: $color-top-links;
+$dark-active-color: $color-orange;
+
+// Colors
+
+$primary: $color-dark-purple;
+$light: $color-light-tan;
+
+// Body
+
+$body-bg: $black;
+
+// Headings
 $headings-font-family: $global-font-family;
+$headings-color: $color-dark-purple;
+
+// Links
+
+$link-color: $color-light-tan;
+$link-hover-color: $color-channel-blue-selected;
+
+// Lists
+$list-group-color: $light;
+
+// Buttons
+
+$btn-font-family: $global-font-family;
+
+
+// Navbar
+$navbar-dark-active-color: $color-channel-blue-selected;
+$navbar-dark-hover-color: $color-top-links;
+
+
+// Code
+$code-color: $color-channel-blue;
 
 /* import bootstrap to set changes */
 @import "~bootstrap/scss/bootstrap";
+
+/* --- custom classes --- */
+
+.navigation-bar {
+  background-color: $color-dark-purple !important;
+  font-family: $global-font-family;
+
+  .nav-link {
+    color: $color-light-tan;
+    font-family: $headings-font-family;
+    padding: $spacer 0 $spacer 0;
+
+    &:hover {
+      color: #000;
+    }
+
+    /*&.active {
+      text-decoration: underline;
+    }*/
+  }
+}

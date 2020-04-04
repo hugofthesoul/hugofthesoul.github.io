@@ -14,22 +14,3 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
-
-.navigation-bar {
-  background-color: $color-dark-purple;
-
-  .nav-link {
-    color: #D7DAE9;
-    font-family: $headings-font-family;
-    padding-top: 15px;
-    padding-bottom: 15px;
-
-    &:hover {
-      color: #000;
-    }
-
-    &.active {
-      text-decoration: underline;
-    }
-  }
-}

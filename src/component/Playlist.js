@@ -5,6 +5,14 @@ import Col from 'react-bootstrap/Col';
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import {
+  faArrowCircleRight,
+  faArrowCircleLeft
+} from '@fortawesome/free-solid-svg-icons'
+
+import './Playlist.scss';
+
 class Playlist extends React.Component {
   constructor(props){
     super(props);
@@ -32,7 +40,8 @@ class Playlist extends React.Component {
     return (
       <Container>
         <Row>
-          <Col md={1} onClick={this.scrollLeft}>
+          <Col md={1} onClick={this.scrollLeft} className="hos-playlist-btn">
+            <FontAwesomeIcon icon={faArrowCircleLeft} size="2x" fixedWidth />
           </Col>
           <Col md={2}>
             <Card>
@@ -79,7 +88,8 @@ class Playlist extends React.Component {
                        onClick={() => this.props.onVideoChange(this.state.start + 4)} />}
             </Card>
           </Col>
-          <Col md={1} onClick={this.scrollRight}>
+          <Col md={1} onClick={this.scrollRight} className="hos-playlist-btn">
+            <FontAwesomeIcon icon={faArrowCircleRight} size="2x" fixedWidth />
           </Col>
         </Row>
       </Container>

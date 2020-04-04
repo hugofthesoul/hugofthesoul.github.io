@@ -1,6 +1,7 @@
 import React from 'react';
 
 import Container from 'react-bootstrap/Container';
+import Navbar from 'react-bootstrap/Navbar';
 import Nav from 'react-bootstrap/Nav';
 import ReactDOM from 'react-dom';
 import {
@@ -18,36 +19,33 @@ import Login from './About';
 
 import * as serviceWorker from './serviceWorker';
 
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faUser } from '@fortawesome/free-solid-svg-icons'
 import ImgLogo from './image/logo-transparent.png';
 import './index.scss';
 
 ReactDOM.render((
-  <React.StrictMode>
-    <div className="fixed-top navigation-bar">
+  <React.StrictMode>       
+    <Navbar bg="dark" variant="dark" expand="lg" className="fixed-top navigation-bar">
       <Container>
-        <Nav className="justify-content-center">
-          <Nav.Item>
-            <Nav.Link href="/#"><img alt="Hug of the Soul" src={ImgLogo} width="30" height="30" /></Nav.Link>
-          </Nav.Item>
-          <Nav.Item>
-            <Nav.Link href="/#">Home</Nav.Link>
-          </Nav.Item>
-          <Nav.Item>
-            <Nav.Link href="/#hug-tv">Hug TV</Nav.Link>
-          </Nav.Item>
-          <Nav.Item>
-            <Nav.Link href="/#hugs">Get Hugs</Nav.Link>
-          </Nav.Item>
-          <Nav.Item>
-            <Nav.Link href="/#hospital">Hugs per Hospital</Nav.Link>
-          </Nav.Item>
-          <Nav.Item>
-            <Nav.Link href="/#about">About</Nav.Link>
-          </Nav.Item>
+      <Navbar.Brand href="#home"><img alt="Hug of the Soul" src={ImgLogo} width="30" height="30" /></Navbar.Brand>
+      <Navbar.Toggle aria-controls="basic-navbar-nav" />
+      <Navbar.Collapse id="basic-navbar-nav">
+        <Nav>                    
+          <Nav.Link href="/#">Home</Nav.Link>
+          <Nav.Link href="/#hug-tv">Hug TV</Nav.Link>
+          <Nav.Link href="/#hugs">Get Hugs</Nav.Link>
+          <Nav.Link href="/#hospital">Hugs per Hospital</Nav.Link>          
+          <Nav.Link href="/#about">About</Nav.Link>          
         </Nav>
+        <div class="flex-fill">&nbsp;</div>
+        <Nav>
+          <Nav.Link href="/#"><FontAwesomeIcon icon={faUser} /></Nav.Link>
+        </Nav>
+      </Navbar.Collapse>
       </Container>
-    </div>
-
+    </Navbar>
+    <br />
     <Router basename="/">
       <Switch>
         <Route exact path="/">
