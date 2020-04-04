@@ -22,11 +22,11 @@ class Hospital extends React.Component {
           <Card.Subtitle><i>- Kersing</i></Card.Subtitle>
         </Card>
         <Card>
-          <Card.Text>Let me know what you want me to put for you. In german?</Card.Text>
+          <Card.Text>Thank you for your hard work and saving so many lives!</Card.Text>
           <Card.Subtitle><i>- Mattias</i></Card.Subtitle>
         </Card>
         <Card>
-          <Card.Text>We give hope because we have hope.</Card.Text>
+          <Card.Text>We can give hope because we have hope.</Card.Text>
           <Card.Subtitle><i>- Peter</i></Card.Subtitle>
         </Card>
         <Card>

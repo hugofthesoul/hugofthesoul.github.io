@@ -4,17 +4,27 @@ import Dropdown from 'react-bootstrap/Dropdown';
 
 import './DropdownToggle.scss';
 
+import languages from '../data/languages.json';
+
 class LanguageTuner extends React.Component {
   constructor(props){
     super(props);
 
     this.state = {
-      selectedLanguage: "en"
+      selectedLanguageCode: "en",
+      selectedLanguageName: "English"
     };
   }
 
   onSelectedLanguageChange = (item) => {
-    this.setState({ selectedLanguage: item },
+    var languageName = "";
+    for (var i in languages){
+      if (languages[i].code === item){
+        languageName = languages[i].name;
+      }
+    }
+
+    this.setState({ selectedLanguageCode: item, selectedLanguageName: languageName },
                   () => this.props.onSelectedLanguageChange(item));
   }
 
@@ -23,7 +33,7 @@ class LanguageTuner extends React.Component {
       <div className="hug-dropdown-toggle">
         <Dropdown onSelect={this.onSelectedLanguageChange}>
           <Dropdown.Toggle variant="default">
-            {this.state.selectedLanguage}
+            {this.state.selectedLanguageName}
           </Dropdown.Toggle>
           <Dropdown.Menu>
             <Dropdown.Item eventKey="en">English</Dropdown.Item>

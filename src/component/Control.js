@@ -18,7 +18,7 @@ class Control extends React.Component {
 
     this.state = {
       selectedChannel: "gratitude",
-      selectedVideoCount: 5,
+      selectedVideoCount: 10,
       selectedDate: new Date(),
       selectedCountry: "us",
       selectedLanguage: "en"
@@ -59,10 +59,10 @@ class Control extends React.Component {
   getStatistics(){
     var component = this;
 
-    var country = "";
+    var countryCode = "";
     for (var i in countries){
       if (countries[i].code === component.state.selectedCountry){
-        country = countries[i].name;
+        countryCode = countries[i].stat;
       }
     }
 
@@ -73,7 +73,7 @@ class Control extends React.Component {
     }).then(function (response) {
       // handle success
       for (var i in response.data.Countries){
-        if (response.data.Countries[i].Country === country){
+        if (response.data.Countries[i].CountryCode === countryCode){
           component.onStatisticsChange(response.data.Countries[i].TotalRecovered);
         }
       }

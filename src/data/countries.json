@@ -1,31 +1,31 @@
 [
   {
     "name": "Bolivia",
+    "stat": "BO",
     "code": "bo",
     "language": "es"
   },
   {
-    "name": "Canada",
-    "code": "ca",
-    "language": "en"
-  },
-  {
     "name": "Germany",
+    "stat": "DE",
     "code": "de",
     "language": "de"
   },
   {
     "name": "India",
+    "stat": "IN",
     "code": "in",
     "language": "en"
   },
   {
     "name": "United Kingdom",
+    "stat": "GB",
     "code": "gb",
     "language": "en"
   },
   {
-    "name": "US",
+    "name": "United States",
+    "stat": "US",
     "code": "us",
     "language": "en"
   }
