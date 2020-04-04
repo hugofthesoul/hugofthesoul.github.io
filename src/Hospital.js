@@ -6,8 +6,8 @@ import './Hospital.scss'
 class Hospital extends React.Component {
   render(){
     return (
-      <div>
-        <h2>@Hospital</h2>
+      <div className="hospital">
+        <h2 className="title">@Hospital</h2>
         <Card>
           <Card.Text>We care for you and we are praying for you</Card.Text>
           <Card.Subtitle><i>- Rommy</i></Card.Subtitle>

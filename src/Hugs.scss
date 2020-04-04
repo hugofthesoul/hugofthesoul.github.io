@@ -1,1 +1,11 @@
 @import './custom';
+
+.hugs {
+    .title {
+        color: $color-white;
+    }
+
+    .card {
+        background-color: $color-channel-blue-selected;
+    }
+}

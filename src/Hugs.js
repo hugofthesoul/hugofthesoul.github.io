@@ -7,8 +7,8 @@ import './Hugs.scss'
 class Hugs extends React.Component {
   render(){
     return (
-      <div>
-        <h2>Supporters</h2>
+      <div className="hugs">
+        <h2 className="title">Supporters</h2>
         <Card>
           <Card.Text>Rommy would love to hear from you!</Card.Text>
           <Card.Subtitle><Button>Connect</Button></Card.Subtitle>
