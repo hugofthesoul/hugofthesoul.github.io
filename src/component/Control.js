@@ -41,7 +41,7 @@ class Control extends React.Component {
       responseType: 'json',
       params: {
         category: this.state.selectedChannel,
-        regionCode: this.state.selectedCountry,
+        countryCode: this.state.selectedCountry,
         languageCode: this.state.selectedLanguage,
         publishedDate: this.state.selectedDate,
         maxResults: this.state.selectedVideoCount
