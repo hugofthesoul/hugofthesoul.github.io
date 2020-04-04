@@ -48,7 +48,7 @@ class Control extends React.Component {
     }).then(function (response) {
       // handle success
       console.log(response);
-      component.onPlaylistChange(`https://www.youtube.com/embed/${response.data.items[0].id.videoId}`);
+      component.onPlaylistChange(`https://www.youtube.com/embed/${response.data.items[0].snippet.resourceId.videoId}`);
     })
     .catch(function (error) {
       // handle error
