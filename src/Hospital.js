@@ -21,7 +21,7 @@ class Hospital extends React.Component {
           <Card.Subtitle><i>- Kersing</i></Card.Subtitle>
         </Card>
         <Card>
-          <Card.Text>Let me know what you want me to put for you. In German?</Card.Text>
+          <Card.Text>Let me know what you want me to put for you. In german?</Card.Text>
           <Card.Subtitle><i>- Mattias</i></Card.Subtitle>
         </Card>
         <Card>
