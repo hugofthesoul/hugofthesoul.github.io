@@ -18,6 +18,7 @@ import Login from './About';
 
 import * as serviceWorker from './serviceWorker';
 
+import ImgLogo from './image/logo-transparent.png';
 import './index.scss';
 
 ReactDOM.render((
@@ -25,6 +26,9 @@ ReactDOM.render((
     <div className="fixed-top navigation-bar">
       <Container>
         <Nav className="justify-content-center">
+          <Nav.Item>
+            <Nav.Link href="/#"><img alt="Hug of the Soul" src={ImgLogo} width="30" height="30" /></Nav.Link>
+          </Nav.Item>
           <Nav.Item>
             <Nav.Link href="/#">Home</Nav.Link>
           </Nav.Item>
