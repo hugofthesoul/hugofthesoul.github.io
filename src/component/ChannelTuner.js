@@ -15,10 +15,11 @@ class ChannelTuner extends React.Component {
   }
 
   handleToggle = (selectedToggleIndex) => (evt) => {
+    const category = evt.currentTarget.value;
     this.setState({
       selectedToggleIndex
     }, () => {
-      this.props.onSelectedChannelChange(evt.currentTarget.value)
+      this.props.onSelectedChannelChange(category)
     });
   }
 
