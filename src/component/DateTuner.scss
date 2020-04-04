@@ -1,10 +1,12 @@
 @import '../custom';
 
 .date-tuner {
+  padding-top: 20px;
+  
   .react-date-picker {
     width: 100%;
   }
-  
+
   .react-date-picker__wrapper {
     background-color: white;
     border: 0 none;

@@ -9,7 +9,7 @@ class Screen extends React.Component {
     return (
       <div className="screen-section">
         <iframe width="100%"
-                height="315"
+                height="625"
                 frameBorder="0"
                 title="Hope TV"
                 src={this.props.embedUrl}

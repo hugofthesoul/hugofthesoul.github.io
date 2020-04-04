@@ -7,16 +7,27 @@ import Card from 'react-bootstrap/Card';
 import './ChannelTuner.scss'
 
 class ChannelTuner extends React.Component {
-  handleToggle = (evt) => {
-    this.props.onSelectedChannelChange(evt.currentTarget.value)
+  constructor(props) {
+    super(props);
+    this.state = {
+      selectedToggleIndex: 0
+    };
+  }
+
+  handleToggle = (selectedToggleIndex) => (evt) => {
+    this.setState({
+      selectedToggleIndex
+    }, () => {
+      this.props.onSelectedChannelChange(evt.currentTarget.value)
+    });
   }
 
   render(){
     return (
       <Accordion bsPrefix="channel-tuner-accordion" defaultActiveKey="0">
-        <Card>
+        <Card className={this.state.selectedToggleIndex === 0 ? 'active' : ''}>
           <Card.Header>
-            <Accordion.Toggle as={Button} value="gratitude" onClick={this.handleToggle} variant="link" eventKey="0">
+            <Accordion.Toggle as={Button} value="gratitude" onClick={this.handleToggle(0)} variant="link" eventKey="0">
               GRATITUDE
             </Accordion.Toggle>
           </Card.Header>
@@ -30,9 +41,9 @@ class ChannelTuner extends React.Component {
             </Card.Body>
           </Accordion.Collapse>
         </Card>
-        <Card>
+        <Card className={this.state.selectedToggleIndex === 1 ? 'active' : ''}>
           <Card.Header>
-            <Accordion.Toggle as={Button} value="kindness" onClick={this.handleToggle} variant="link" eventKey="1">
+            <Accordion.Toggle as={Button} value="kindness" onClick={this.handleToggle(1)} variant="link" eventKey="1">
               KINDNESS
             </Accordion.Toggle>
           </Card.Header>
@@ -46,9 +57,9 @@ class ChannelTuner extends React.Component {
             </Card.Body>
           </Accordion.Collapse>
         </Card>
-        <Card>
+        <Card className={this.state.selectedToggleIndex === 2 ? 'active' : ''}>
           <Card.Header>
-            <Accordion.Toggle as={Button} value="miracle" onClick={this.handleToggle} variant="link" eventKey="2">
+            <Accordion.Toggle as={Button} value="miracle" onClick={this.handleToggle(2)} variant="link" eventKey="2">
               MIRACLES
             </Accordion.Toggle>
           </Card.Header>
@@ -61,9 +72,9 @@ class ChannelTuner extends React.Component {
             </Card.Body>
           </Accordion.Collapse>
         </Card>
-        <Card>
+        <Card className={this.state.selectedToggleIndex === 3 ? 'active' : ''}>
           <Card.Header>
-            <Accordion.Toggle as={Button} value="doctors" onClick={this.handleToggle} variant="link" eventKey="3">
+            <Accordion.Toggle as={Button} value="doctors" onClick={this.handleToggle(3)} variant="link" eventKey="3">
               UNITED
             </Accordion.Toggle>
           </Card.Header>

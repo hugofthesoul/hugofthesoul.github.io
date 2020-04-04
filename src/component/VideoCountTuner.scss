@@ -1,11 +1,19 @@
 @import '../custom';
 
+$range-height: 16px;
+
 .video-count-tuner {
+  label {
+    color: $color-white;
+    font-size: 18px;
+    line-height: 21px;
+  }
+
    /* Cross browser compatible input range styles - https://css-tricks.com/styling-cross-browser-compatible-range-inputs-css/ */
   input[type=range] {
     -webkit-appearance: none;
     background-color: transparent;
-    height: 30px;
+    height: $range-height;
     margin: 0;
     width: 100%;
   }
@@ -22,8 +30,8 @@
     border-radius: $border-radius;
     box-shadow: 0 2px 2px rgba(0,0,0,0.3);
     cursor: pointer;
-    height: 30px;
-    width: 30px;
+    height: $range-height;
+    width: $range-height;
   }
 
   input[type=range]::-moz-range-thumb {
@@ -32,8 +40,8 @@
     border-radius: $border-radius;
     box-shadow: 0 2px 2px rgba(0,0,0,0.3);
     cursor: pointer;
-    height: 30px;
-    width: 30px;
+    height: $range-height;
+    width: $range-height;
   }
 
   input[type=range]::-ms-thumb {
@@ -41,8 +49,8 @@
     border: 0 none;
     box-shadow: 0 2px 2px rgba(0,0,0,0.3);
     cursor: pointer;
-    height: 30px;
-    width: 30px;
+    height: $range-height;
+    width: $range-height;
   }
 
   /* Slider track */
@@ -50,14 +58,14 @@
     background-color: $color-dark-purple;
     border-radius: $border-radius;
     box-shadow: 0 2px 2px rgba(0,0,0,0.2) inset;
-    height: 30px;
+    height: $range-height;
   }
 
   input[type=range]::-moz-range-track {
     background-color: $color-dark-purple;
     border-radius: $border-radius;
     box-shadow: 0 2px 2px rgba(0,0,0,0.2) inset;
-    height: 30px;
+    height: $range-height;
   }
 
   input[type=range]::-ms-track {
@@ -67,7 +75,7 @@
     box-shadow: 0 2px 2px rgba(0,0,0,0.2) inset;
     color: transparent;
     cursor: pointer;
-    height: 30px;
+    height: $range-height;
     width: calc(100% - 10px);
   }
 

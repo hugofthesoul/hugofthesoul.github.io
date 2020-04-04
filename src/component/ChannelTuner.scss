@@ -5,12 +5,20 @@
 @import '../custom';
 
 .channel-tuner-accordion {
+  margin-bottom: 10px;
+
   .card {
     background-color: $color-channel-blue;
+    border-radius: $border-radius;
     border: 0 none;
-    margin-bottom: 20px;
+    margin-bottom: 5px;
+
+    &.active {
+      background-color: $color-channel-blue-selected;
+    }
 
     .card-header {
+      background-color: transparent;
       border: 0 none;
       font-family: $headings-font-family;
       padding: 0;
@@ -19,19 +27,18 @@
     .btn {
       color: $black;
       display: block;
-      font-size: 40px;
+      font-family: inherit;
+      font-size: 36px;
       width: 100%;
-    }
-
-    .collapse {
-      background-color: $color-channel-blue-selected;
-      border-bottom-left-radius: $border-radius;
-      border-bottom-right-radius: $border-radius;
     }
 
     .card-body {
       color: $black;
-      padding: 30px;
+      font-size: 18px;
+      height: 250px;
+      line-height: 21px;
+      overflow-y: scroll;
+      padding: 20px;
     }
   }
 }
