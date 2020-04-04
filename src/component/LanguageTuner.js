@@ -7,6 +7,8 @@ import enFlag from '../image/england_640.png';
 import deFlag from '../image/germany_640.png';
 import esFlag from '../image/spain_640.png';
 
+import './DropdownToggle.scss';
+
 class LanguageTuner extends React.Component {
   constructor(props){
     super(props);
@@ -23,9 +25,9 @@ class LanguageTuner extends React.Component {
 
   render(){
     return (
-      <div>
+      <div class="hug-dropdown-toggle">
         <Dropdown onSelect={this.onSelectedLanguageChange}>
-          <Dropdown.Toggle>
+          <Dropdown.Toggle variant="default">
             {this.state.selectedLanguage}
           </Dropdown.Toggle>
           <Dropdown.Menu>

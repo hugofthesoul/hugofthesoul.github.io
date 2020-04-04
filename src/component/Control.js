@@ -2,7 +2,6 @@ import axios from 'axios';
 
 import React from 'react';
 import Col from 'react-bootstrap/Col';
-import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 
 import ChannelTuner from './ChannelTuner';
@@ -115,24 +114,22 @@ class Control extends React.Component {
     return (
       <div>
         <ChannelTuner onSelectedChannelChange={this.onSelectedChannelChange} />
-        <Container>
-          <Row>
-            <Col md={6}>
-              <VideoCountTuner onSelectedVideoCountChange={this.onSelectedVideoCountChange} />
-            </Col>
-            <Col md={6}>
-              <DateTuner onSelectedDateChange={this.onSelectedDateChange} />
-            </Col>
-          </Row>
-          <Row>
-            <Col md={6}>
-              <CountryTuner onSelectedCountryChange={this.onSelectedCountryChange} />
-            </Col>
-            <Col md={6}>
-              <LanguageTuner onSelectedLanguageChange={this.onSelectedLanguageChange} />
-            </Col>
-          </Row>
-        </Container>
+        <Row className="mb-3">
+          <Col md={6}>
+            <VideoCountTuner onSelectedVideoCountChange={this.onSelectedVideoCountChange} />
+          </Col>
+          <Col md={6}>
+            <DateTuner onSelectedDateChange={this.onSelectedDateChange} />
+          </Col>
+        </Row>
+        <Row>
+          <Col md={6}>
+            <CountryTuner onSelectedCountryChange={this.onSelectedCountryChange} />
+          </Col>
+          <Col md={6}>
+            <LanguageTuner onSelectedLanguageChange={this.onSelectedLanguageChange} />
+          </Col>
+        </Row>
       </div>
     );
   }

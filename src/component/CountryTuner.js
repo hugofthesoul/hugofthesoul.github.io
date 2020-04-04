@@ -9,6 +9,8 @@ import inFlag from '../image/india_640.png';
 import gbFlag from '../image/united_kingdom_640.png';
 import usFlag from '../image/united_states_of_america_640.png';
 
+import './DropdownToggle.scss';
+
 class CountryTuner extends React.Component {
   constructor(props){
     super(props);
@@ -25,9 +27,9 @@ class CountryTuner extends React.Component {
 
   render(){
     return (
-      <div>
+      <div class="hug-dropdown-toggle">
         <Dropdown onSelect={this.onSelectedCountryChange}>
-          <Dropdown.Toggle>
+          <Dropdown.Toggle variant="default">
             {this.state.selectedCountry}
           </Dropdown.Toggle>
           <Dropdown.Menu>

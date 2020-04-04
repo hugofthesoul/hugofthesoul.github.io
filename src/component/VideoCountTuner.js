@@ -1,7 +1,6 @@
 import React from 'react';
-import Col from 'react-bootstrap/Col';
-import Container from 'react-bootstrap/Container';
-import Row from 'react-bootstrap/Row';
+
+import './VideoCountTuner.scss'
 
 class VideoCountTuner extends React.Component {
   constructor(props){
@@ -19,10 +18,11 @@ class VideoCountTuner extends React.Component {
 
   render(){
     return (
-      <div>
+      <div class="video-count-tuner">
         <input type="range" min="1" max="20" step="1"
                value={this.state.selectedVideoCount}
-               onChange={changeEvent => this.onSelectedVideoCountChange(changeEvent.target.value)} />
+               onChange={changeEvent => this.onSelectedVideoCountChange(changeEvent.target.value)}
+               />
       </div>
     );
   }

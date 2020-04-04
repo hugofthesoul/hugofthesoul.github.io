@@ -1,0 +1,12 @@
+@import '../custom';
+
+.hug-dropdown-toggle {
+
+  .dropdown-toggle {
+    background-color: white;
+    font-family: $global-font-family;
+    border-radius: $border-radius;
+    text-align: center;
+    width: 100%;
+  }
+}
