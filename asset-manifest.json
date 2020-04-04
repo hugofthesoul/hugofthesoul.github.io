@@ -1,23 +1,31 @@
 {
   "files": {
-    "main.css": "/static/css/main.28d2be93.chunk.css",
-    "main.js": "/static/js/main.3fadf423.chunk.js",
-    "main.js.map": "/static/js/main.3fadf423.chunk.js.map",
+    "main.css": "/static/css/main.550bd787.chunk.css",
+    "main.js": "/static/js/main.b6cb052a.chunk.js",
+    "main.js.map": "/static/js/main.b6cb052a.chunk.js.map",
     "runtime-main.js": "/static/js/runtime-main.32759b97.js",
     "runtime-main.js.map": "/static/js/runtime-main.32759b97.js.map",
-    "static/js/2.b4097d03.chunk.js": "/static/js/2.b4097d03.chunk.js",
-    "static/js/2.b4097d03.chunk.js.map": "/static/js/2.b4097d03.chunk.js.map",
+    "static/css/2.93b3b32d.chunk.css": "/static/css/2.93b3b32d.chunk.css",
+    "static/js/2.861fd614.chunk.js": "/static/js/2.861fd614.chunk.js",
+    "static/js/2.861fd614.chunk.js.map": "/static/js/2.861fd614.chunk.js.map",
     "index.html": "/index.html",
-    "precache-manifest.6797a7b65f853071ded5b9ce0852c47d.js": "/precache-manifest.6797a7b65f853071ded5b9ce0852c47d.js",
+    "precache-manifest.ea244e16ecd75cadc1b5bd8df91b5911.js": "/precache-manifest.ea244e16ecd75cadc1b5bd8df91b5911.js",
     "service-worker.js": "/service-worker.js",
-    "static/css/main.28d2be93.chunk.css.map": "/static/css/main.28d2be93.chunk.css.map",
-    "static/js/2.b4097d03.chunk.js.LICENSE.txt": "/static/js/2.b4097d03.chunk.js.LICENSE.txt",
-    "static/media/logo.svg": "/static/media/logo.5d5d9eef.svg"
+    "static/css/2.93b3b32d.chunk.css.map": "/static/css/2.93b3b32d.chunk.css.map",
+    "static/css/main.550bd787.chunk.css.map": "/static/css/main.550bd787.chunk.css.map",
+    "static/js/2.861fd614.chunk.js.LICENSE.txt": "/static/js/2.861fd614.chunk.js.LICENSE.txt",
+    "static/media/bolivia_640.png": "/static/media/bolivia_640.efbf684c.png",
+    "static/media/germany_640.png": "/static/media/germany_640.ecd018e0.png",
+    "static/media/india_640.png": "/static/media/india_640.15d41000.png",
+    "static/media/Screen.scss": "/static/media/logo-transparent.c62c8499.png",
+    "static/media/united_kingdom_640.png": "/static/media/united_kingdom_640.9abf6d4b.png",
+    "static/media/united_states_of_america_640.png": "/static/media/united_states_of_america_640.5d049922.png"
   },
   "entrypoints": [
     "static/js/runtime-main.32759b97.js",
-    "static/js/2.b4097d03.chunk.js",
-    "static/css/main.28d2be93.chunk.css",
-    "static/js/main.3fadf423.chunk.js"
+    "static/css/2.93b3b32d.chunk.css",
+    "static/js/2.861fd614.chunk.js",
+    "static/css/main.550bd787.chunk.css",
+    "static/js/main.b6cb052a.chunk.js"
   ]
 }
