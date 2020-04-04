@@ -117,11 +117,11 @@ class Control extends React.Component {
         <ChannelTuner onSelectedChannelChange={this.onSelectedChannelChange} />
         <Container>
           <Row>
-            <Col>
+            <Col md={6}>
               <VideoCountTuner onSelectedVideoCountChange={this.onSelectedVideoCountChange} />
               <CountryTuner onSelectedCountryChange={this.onSelectedCountryChange} />
             </Col>
-            <Col>
+            <Col md={6}>
               <DateTuner onSelectedDateChange={this.onSelectedDateChange} />
               <LanguageTuner onSelectedLanguageChange={this.onSelectedLanguageChange} />
             </Col>
