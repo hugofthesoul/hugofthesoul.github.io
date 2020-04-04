@@ -20,18 +20,9 @@ class VideoCountTuner extends React.Component {
   render(){
     return (
       <div>
-        <Container>
-          <Row>
-            <Col md={6}>
-              <label>{this.state.selectedVideoCount}</label>
-            </Col>
-            <Col md={6}>
-              <input type="range" min="1" max="20" step="1"
-                     value={this.state.selectedVideoCount}
-                     onChange={changeEvent => this.onSelectedVideoCountChange(changeEvent.target.value)} />
-            </Col>
-          </Row>
-        </Container>
+        <input type="range" min="1" max="20" step="1"
+               value={this.state.selectedVideoCount}
+               onChange={changeEvent => this.onSelectedVideoCountChange(changeEvent.target.value)} />
       </div>
     );
   }
