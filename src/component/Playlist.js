@@ -14,11 +14,27 @@ class Playlist extends React.Component {
     };
   }
 
+  scrollLeft = () =>
+  {
+    if (this.state.start > 0){
+      this.setState({ start: this.state.start - 1 });
+    }
+  }
+
+  scrollRight = () =>
+  {
+    if (this.state.start < this.props.videos.length - 5){
+      this.setState({ start: this.state.start + 1 });
+    }
+  }
+
   render(){
     return (
       <Container>
         <Row>
-          <Col width="20%">
+          <Col md={1} onClick={this.scrollLeft}>
+          </Col>
+          <Col md={2}>
             <Card>
                 {this.props.videos.length - this.state.start > 0 &&
                   <img alt={this.props.videos[this.state.start].snippet.title}
@@ -27,7 +43,7 @@ class Playlist extends React.Component {
                        onClick={() => this.props.onVideoChange(this.state.start)} />}
             </Card>
           </Col>
-          <Col width="20%">
+          <Col md={2}>
             <Card>
                 {this.props.videos.length - this.state.start > 1 &&
                   <img alt={this.props.videos[this.state.start + 1].snippet.title}
@@ -36,7 +52,7 @@ class Playlist extends React.Component {
                        onClick={() => this.props.onVideoChange(this.state.start + 1)} />}
             </Card>
           </Col>
-          <Col width="20%">
+          <Col md={2}>
             <Card>
                 {this.props.videos.length - this.state.start > 2 &&
                   <img alt={this.props.videos[this.state.start + 2].snippet.title}
@@ -45,7 +61,7 @@ class Playlist extends React.Component {
                        onClick={() => this.props.onVideoChange(this.state.start + 2)} />}
             </Card>
           </Col>
-          <Col width="20%">
+          <Col md={2}>
             <Card>
                 {this.props.videos.length - this.state.start > 3 &&
                   <img alt={this.props.videos[this.state.start + 3].snippet.title}
@@ -54,7 +70,7 @@ class Playlist extends React.Component {
                        onClick={() => this.props.onVideoChange(this.state.start + 3)} />}
             </Card>
           </Col>
-          <Col width="20%">
+          <Col md={2}>
             <Card>
                 {this.props.videos.length - this.state.start > 4 &&
                   <img alt={this.props.videos[this.state.start + 4].snippet.title}
@@ -62,6 +78,8 @@ class Playlist extends React.Component {
                        width="100%" height="100%"
                        onClick={() => this.props.onVideoChange(this.state.start + 4)} />}
             </Card>
+          </Col>
+          <Col md={1} onClick={this.scrollRight}>
           </Col>
         </Row>
       </Container>
