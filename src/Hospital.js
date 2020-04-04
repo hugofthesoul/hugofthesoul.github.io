@@ -1,6 +1,8 @@
 import React from 'react';
 import Card from 'react-bootstrap/Card';
 
+import './Hospital.scss'
+
 class Hospital extends React.Component {
   render(){
     return (
