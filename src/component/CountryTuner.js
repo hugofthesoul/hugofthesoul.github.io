@@ -33,11 +33,11 @@ class CountryTuner extends React.Component {
             {this.state.selectedCountry}
           </Dropdown.Toggle>
           <Dropdown.Menu>
-            <Dropdown.Item eventKey="bo"><Image src={boFlag} height="20" /></Dropdown.Item>
-            <Dropdown.Item eventKey="de"><Image src={deFlag} height="20" /></Dropdown.Item>
-            <Dropdown.Item eventKey="in"><Image src={inFlag} height="20" /></Dropdown.Item>
-            <Dropdown.Item eventKey="gb"><Image src={gbFlag} height="20" /></Dropdown.Item>
-            <Dropdown.Item eventKey="us"><Image src={usFlag} height="20" /></Dropdown.Item>
+            <Dropdown.Item eventKey="bo"><Image src={boFlag} height="20" /> Bolivia</Dropdown.Item>
+            <Dropdown.Item eventKey="de"><Image src={deFlag} height="20" /> Germany</Dropdown.Item>
+            <Dropdown.Item eventKey="in"><Image src={inFlag} height="20" /> India</Dropdown.Item>
+            <Dropdown.Item eventKey="gb"><Image src={gbFlag} height="20" /> United Kingdom</Dropdown.Item>
+            <Dropdown.Item eventKey="us"><Image src={usFlag} height="20" /> United States of America</Dropdown.Item>
           </Dropdown.Menu>
         </Dropdown>
       </div>
