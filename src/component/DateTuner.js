@@ -7,8 +7,14 @@ class DateTuner extends React.Component {
   constructor(props){
     super(props);
 
+    var today = new Date();
+    var lastWeek = new Date();
+    lastWeek.setDate(today.getDate() - 7);
+
     this.state = {
-      selectedDate: new Date()
+      minDate: lastWeek,
+      selectedDate: today,
+      maxDate: today
     };
   }
 
@@ -21,7 +27,9 @@ class DateTuner extends React.Component {
     return (
       <Card>
         <Card.Body>
-          <DatePicker value={this.state.selectedDate} onChange={this.onSelectedDateChange} />
+          <DatePicker minDate={this.state.minDate} maxDate={this.state.maxDate}
+                      value={this.state.selectedDate}
+                      onChange={this.onSelectedDateChange} />
         </Card.Body>
       </Card>
     );

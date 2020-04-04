@@ -19,6 +19,7 @@ class VideoCountTuner extends React.Component {
     return (
       <Card>
         <Card.Body>
+          <label>{this.state.selectedVideoCount}</label>
           <input type="range" min="1" max="20" step="1"
                  value={this.state.selectedVideoCount}
                  onChange={changeEvent => this.onSelectedVideoCountChange(changeEvent.target.value)} />
