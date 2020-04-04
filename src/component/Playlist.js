@@ -20,52 +20,47 @@ class Playlist extends React.Component {
         <Row>
           <Col width="20%">
             <Card>
-              <Card.Body>
                 {this.props.videos.length - this.state.start > 0 &&
                   <img alt={this.props.videos[this.state.start].snippet.title}
                        src={this.props.videos[this.state.start].snippet.thumbnails.default.url}
+                       width="100%" height="100%"
                        onClick={() => this.props.onVideoChange(this.state.start)} />}
-              </Card.Body>
             </Card>
           </Col>
           <Col width="20%">
             <Card>
-              <Card.Body>
                 {this.props.videos.length - this.state.start > 1 &&
                   <img alt={this.props.videos[this.state.start + 1].snippet.title}
                        src={this.props.videos[this.state.start + 1].snippet.thumbnails.default.url}
+                       width="100%" height="100%"
                        onClick={() => this.props.onVideoChange(this.state.start + 1)} />}
-              </Card.Body>
             </Card>
           </Col>
           <Col width="20%">
             <Card>
-              <Card.Body>
                 {this.props.videos.length - this.state.start > 2 &&
                   <img alt={this.props.videos[this.state.start + 2].snippet.title}
                        src={this.props.videos[this.state.start + 2].snippet.thumbnails.default.url}
+                       width="100%" height="100%"
                        onClick={() => this.props.onVideoChange(this.state.start + 2)} />}
-              </Card.Body>
             </Card>
           </Col>
           <Col width="20%">
             <Card>
-              <Card.Body>
                 {this.props.videos.length - this.state.start > 3 &&
                   <img alt={this.props.videos[this.state.start + 3].snippet.title}
                        src={this.props.videos[this.state.start + 3].snippet.thumbnails.default.url}
+                       width="100%" height="100%"
                        onClick={() => this.props.onVideoChange(this.state.start + 3)} />}
-              </Card.Body>
             </Card>
           </Col>
           <Col width="20%">
             <Card>
-              <Card.Body>
                 {this.props.videos.length - this.state.start > 4 &&
                   <img alt={this.props.videos[this.state.start + 4].snippet.title}
                        src={this.props.videos[this.state.start + 4].snippet.thumbnails.default.url}
+                       width="100%" height="100%"
                        onClick={() => this.props.onVideoChange(this.state.start + 4)} />}
-              </Card.Body>
             </Card>
           </Col>
         </Row>
