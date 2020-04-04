@@ -119,10 +119,16 @@ class Control extends React.Component {
           <Row>
             <Col md={6}>
               <VideoCountTuner onSelectedVideoCountChange={this.onSelectedVideoCountChange} />
-              <CountryTuner onSelectedCountryChange={this.onSelectedCountryChange} />
             </Col>
             <Col md={6}>
               <DateTuner onSelectedDateChange={this.onSelectedDateChange} />
+            </Col>
+          </Row>
+          <Row>
+            <Col md={6}>
+              <CountryTuner onSelectedCountryChange={this.onSelectedCountryChange} />
+            </Col>
+            <Col md={6}>
               <LanguageTuner onSelectedLanguageChange={this.onSelectedLanguageChange} />
             </Col>
           </Row>
