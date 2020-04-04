@@ -18,7 +18,7 @@ class Hospital extends React.Component {
           <Card.Subtitle><i>- Jermaine</i></Card.Subtitle>
         </Card>
         <Card>
-          <Card.Text>You are not alone. We are fighting with you. </Card.Text>
+          <Card.Text>You are not alone. We are fighting with you.</Card.Text>
           <Card.Subtitle><i>- Kersing</i></Card.Subtitle>
         </Card>
         <Card>
@@ -34,7 +34,7 @@ class Hospital extends React.Component {
           <Card.Subtitle><i>- Pratyoosh</i></Card.Subtitle>
         </Card>
         <Card>
-          <Card.Text>Let me know what you want me to put for you. In spanish?</Card.Text>
+          <Card.Text>estimados doctores, enfermeras y trabajadores en salud, este es un pequeño agradecimiento por todo lo que ustedes hcen por nosotros dia a dia. Por favor, no se sientan solos, somos muchos los que estamos orando por ustedes, pedimos que Dios les de fuerzas para vencer esta batalla. Un abrazo del alma.</Card.Text>
           <Card.Subtitle><i>- Rommy</i></Card.Subtitle>
         </Card>
       </Container>
