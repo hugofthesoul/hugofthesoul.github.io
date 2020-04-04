@@ -1,3 +1,7 @@
+@import "~bootstrap/scss/_functions";
+@import "~bootstrap/scss/_variables";
+@import "~bootstrap/scss/_mixins";
+
 @import '../custom';
 
 .channel-tuner-accordion {
@@ -8,12 +12,12 @@
 
     .card-header {
       border: 0 none;
-      font-family: "knigsbergregular", "Arial Rounded", sans-serif;
+      font-family: $headings-font-family;
       padding: 0;
     }
 
     .btn {
-      color: $color-black;
+      color: $black;
       display: block;
       font-size: 40px;
       width: 100%;
@@ -26,6 +30,7 @@
     }
 
     .card-body {
+      color: $black;
       padding: 30px;
     }
   }

@@ -1,26 +1,24 @@
+@import "~bootstrap/scss/_functions";
+@import "~bootstrap/scss/_variables";
+@import "~bootstrap/scss/_mixins";
+
 /* The following block can be included in a custom.scss */
-
-/* make the customizations */
-$theme-colors: (
-    "columbiaBlue": #C5D1EB,
-    "darkSkyBlue": #92AFD7,
-    "wintergreenDream": #5A7684,
-    "darkSlateGray": #395B50,
-    "darkJungleGreen": #1F2F16
-);
-
 $color-dark-purple: #445898; //  - Dark Purple/Top Banner/Slider
 $color-light-tan: #F3D2A9; //  - Light Tan/Logo/Text next to How to Hug Button
 $color-channel-blue: #43C3D1; //  - Channel Blue
 $color-channel-blue-selected: #96D9EE; //  - Logo/Channel Blue Selected
 $color-top-links: #D7DAE9; //  - Language and Country/Top Links Light Purple
 $color-orange: #F0B975; //  - How to Hug Orange Button/Font next to it
-$color-white: #ffffff;
-$color-black: #000000;
+$color-white: $white;
+$color-black: $black;
 
-$body-bg: $color-black;
+$body-bg: $black;
+$body-color: $white;
+
+
+$global-font-family: "knigsbergregular", "Arial Rounded", sans-serif;
+
+$headings-font-family: $global-font-family;
 
 /* import bootstrap to set changes */
 @import "~bootstrap/scss/bootstrap";
-
-$global-font-family: "knigsbergregular", "Arial Rounded", sans-serif;

@@ -16,6 +16,8 @@ import {
   faTrello
 } from '@fortawesome/free-brands-svg-icons'
 
+import './About.scss'
+
 class About extends React.Component {
 
   render(){

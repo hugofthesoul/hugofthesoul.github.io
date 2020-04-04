@@ -1,7 +1,7 @@
 @import "custom";
 
 body {
-  // background-color: $color-black !important;
+  // background-color: $black !important;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
     sans-serif;
@@ -20,7 +20,7 @@ code {
 
   .nav-link {
     color: #D7DAE9;
-    font-family: $global-font-family;
+    font-family: $headings-font-family;
     padding-top: 15px;
     padding-bottom: 15px;
 

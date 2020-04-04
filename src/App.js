@@ -9,6 +9,8 @@ import Playlist from './component/Playlist';
 import Screen from './component/Screen';
 import Statistics from './component/Statistics';
 
+import './App.scss'
+
 class App extends React.Component {
   constructor(props){
     super(props);
