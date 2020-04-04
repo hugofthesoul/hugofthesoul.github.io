@@ -9,5 +9,18 @@ $theme-colors: (
     "darkJungleGreen": #1F2F16
 );
 
+$color-dark-purple: #445898; //  - Dark Purple/Top Banner/Slider
+$color-light-tan: #F3D2A9; //  - Light Tan/Logo/Text next to How to Hug Button
+$color-channel-blue: #43C3D1; //  - Channel Blue
+$color-channel-blue-selected: #96D9EE; //  - Logo/Channel Blue Selected
+$color-top-links: #D7DAE9; //  - Language and Country/Top Links Light Purple
+$color-orange: #F0B975; //  - How to Hug Orange Button/Font next to it
+$color-white: #ffffff;
+$color-black: #000000;
+
+$body-bg: $color-black;
+
 /* import bootstrap to set changes */
 @import "~bootstrap/scss/bootstrap";
+
+$global-font-family: "knigsbergregular", "Arial Rounded", sans-serif;
