@@ -26,12 +26,12 @@ class HowToHug extends React.Component {
     return (
       <div className="hug-howto-section">
         <Row>
-          <Col md={5}>
+          <Col xs={6} sm={4}>
             <p className="lead">
               Wanna see your video here? Learn how to do it.
             </p>
           </Col>
-          <Col md={7}>
+          <Col xs={6} sm={8}>
             <Button variant="default" onClick={handleShow}>HOW TO HUG</Button>
           </Col>
         </Row>

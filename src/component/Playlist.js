@@ -17,7 +17,10 @@ class Playlist extends React.Component {
   constructor(props){
     super(props);
 
+    var xs = window.innerWidth < 768;
     this.state = {
+      size: xs ? 3 : 5,
+      small: xs,
       start: 0
     };
   }
@@ -31,65 +34,42 @@ class Playlist extends React.Component {
 
   scrollRight = () =>
   {
-    if (this.state.start < this.props.videos.length - 5){
+    if (this.state.start < this.props.videos.length - this.state.size){
       this.setState({ start: this.state.start + 1 });
     }
   }
 
   render(){
+    var vids = []
+    for (var i = this.state.start; i < this.state.start + this.state.size; i++)
+    {
+      vids.push(i);
+    }
+
+    var playlist = [];
+    for (const vid in vids)
+    {
+      playlist.push(
+      <Col xs={3} sm={2}>
+        <Card>
+            {this.props.videos.length > vids[vid] &&
+              <img alt={this.props.videos[vids[vid]].snippet.title}
+                  src={this.props.videos[vids[vid]].snippet.thumbnails.default.url}
+                  width="100%" height="100%"
+                  onClick={() => this.props.onVideoChange(vids[vid])} />}
+        </Card>
+      </Col>);
+    }
+
     return (
       <Container>
         <Row>
-          <Col md={1} onClick={this.scrollLeft} className="hos-playlist-btn">
-            <FontAwesomeIcon icon={faArrowCircleLeft} size="2x" fixedWidth />
+          <Col xs={1} onClick={this.scrollLeft} className="hos-playlist-btn">
+            <FontAwesomeIcon icon={faArrowCircleLeft} size={this.state.small ? "1x" : "2x"} fixedWidth />
           </Col>
-          <Col md={2}>
-            <Card>
-                {this.props.videos.length - this.state.start > 0 &&
-                  <img alt={this.props.videos[this.state.start].snippet.title}
-                       src={this.props.videos[this.state.start].snippet.thumbnails.default.url}
-                       width="100%" height="100%"
-                       onClick={() => this.props.onVideoChange(this.state.start)} />}
-            </Card>
-          </Col>
-          <Col md={2}>
-            <Card>
-                {this.props.videos.length - this.state.start > 1 &&
-                  <img alt={this.props.videos[this.state.start + 1].snippet.title}
-                       src={this.props.videos[this.state.start + 1].snippet.thumbnails.default.url}
-                       width="100%" height="100%"
-                       onClick={() => this.props.onVideoChange(this.state.start + 1)} />}
-            </Card>
-          </Col>
-          <Col md={2}>
-            <Card>
-                {this.props.videos.length - this.state.start > 2 &&
-                  <img alt={this.props.videos[this.state.start + 2].snippet.title}
-                       src={this.props.videos[this.state.start + 2].snippet.thumbnails.default.url}
-                       width="100%" height="100%"
-                       onClick={() => this.props.onVideoChange(this.state.start + 2)} />}
-            </Card>
-          </Col>
-          <Col md={2}>
-            <Card>
-                {this.props.videos.length - this.state.start > 3 &&
-                  <img alt={this.props.videos[this.state.start + 3].snippet.title}
-                       src={this.props.videos[this.state.start + 3].snippet.thumbnails.default.url}
-                       width="100%" height="100%"
-                       onClick={() => this.props.onVideoChange(this.state.start + 3)} />}
-            </Card>
-          </Col>
-          <Col md={2}>
-            <Card>
-                {this.props.videos.length - this.state.start > 4 &&
-                  <img alt={this.props.videos[this.state.start + 4].snippet.title}
-                       src={this.props.videos[this.state.start + 4].snippet.thumbnails.default.url}
-                       width="100%" height="100%"
-                       onClick={() => this.props.onVideoChange(this.state.start + 4)} />}
-            </Card>
-          </Col>
-          <Col md={1} onClick={this.scrollRight} className="hos-playlist-btn">
-            <FontAwesomeIcon icon={faArrowCircleRight} size="2x" fixedWidth />
+          {playlist}
+          <Col xs={1} onClick={this.scrollRight} className="hos-playlist-btn">
+            <FontAwesomeIcon icon={faArrowCircleRight} size={this.state.small ? "1x" : "2x"} fixedWidth />
           </Col>
         </Row>
       </Container>
