@@ -24,12 +24,15 @@ class About extends React.Component {
     return (
       <Container>
         <Row>
-          <Col>
+          <Col xs={12} sm={8}>
             <h1 className="title">About</h1>
+          </Col>
+          <Col xs={0} sm={4}>
+            <h2>&nbsp;</h2>
           </Col>
         </Row>
         <Row className="mb-4">
-          <Col lg={8} md={8}>
+          <Col xs={12} sm={8}>
             <h2><FontAwesomeIcon icon={faSmile} fixedWidth /> Purpose</h2>
             <p class="text-orange">
               As the world battles COVID-19 many dashboards and visualizations have been created
@@ -49,12 +52,12 @@ class About extends React.Component {
               ready to keep fighting the good fight wherever you are.
             </p>
           </Col>
-          <Col lg={4} md={4}>
+          <Col xs={0} sm={4}>
             <h2>&nbsp;</h2>
           </Col>
         </Row>
         <Row className="mb-4">
-          <Col lg={8} md={8}>
+          <Col xs={12} sm={8}>
             <h2><FontAwesomeIcon icon={faCross} fixedWidth /> Backstory</h2>
             <p class="text-orange">
               Our founder was moved by the suicide of an Italian nurse and wondered how
@@ -63,12 +66,12 @@ class About extends React.Component {
               to address the <code>#MentalHealth</code> challenge at the <a href="https://www.covidhack.com/">COVID-19 Global Church Hackathon</a>.
             </p>
           </Col>
-          <Col lg={4} md={4}>
+          <Col xs={0} sm={4}>
             <h2>&nbsp;</h2>
           </Col>
         </Row>
         <Row>
-          <Col lg={8} md={8}>
+          <Col xs={12} sm={8}>
             <h2><FontAwesomeIcon icon={faUsers} fixedWidth /> Connect</h2>
             <p class="text-orange">
               Excited about what we're building next? Want to help out? If so,
@@ -84,7 +87,7 @@ class About extends React.Component {
               </a>
             </p>
           </Col>
-          <Col lg={4} md={4}>
+          <Col xs={0} sm={4}>
             <h2>&nbsp;</h2>
           </Col>
         </Row>
