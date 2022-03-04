@@ -1,13 +1,14 @@
 import React from 'react';
+import ReactDOM from 'react-dom';
 
 import Container from 'react-bootstrap/Container';
 import Navbar from 'react-bootstrap/Navbar';
 import Nav from 'react-bootstrap/Nav';
-import ReactDOM from 'react-dom';
+
 import {
-  HashRouter as Router,
-  Switch,
-  Route
+  Routes,
+  Route,
+  HashRouter as Router
 } from 'react-router-dom';
 
 import Home from './App';
@@ -45,30 +46,16 @@ ReactDOM.render((
       </Container>
     </Navbar>
     <br />
-    <Router basename="/">
-      <Switch>
-        <Route exact path="/">
-          <Home />
-        </Route>
-        <Route exact path="/home">
-          <Home />
-        </Route>
-        <Route path="/hug-tv">
-          <App />
-        </Route>
-        <Route path="/hugs">
-          <GetHug />
-        </Route>
-        <Route path="/hospital">
-          <Hospital />
-        </Route>
-        <Route path="/about">
-          <About />
-        </Route>
-        <Route path="/login">
-          <Login />
-        </Route>
-      </Switch>
+    <Router basename="/">  
+      <Routes>
+        <Route exact path="/" element={<Home />} />
+        <Route exact path="/home" element={<Home />} />
+        <Route path="/hug-tv" element={<App />} />
+        <Route path="/hugs" element={<GetHug />} />
+        <Route path="/hospital" element={<Hospital />} />
+        <Route path="/about" element={<About />} />
+        <Route path="/login" element={<Login />} />
+      </Routes> 
     </Router>
   </React.StrictMode>
   ), document.getElementById('root')

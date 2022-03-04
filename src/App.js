@@ -35,21 +35,23 @@ class App extends React.Component {
 
   render(){
     return (
-      <Container className="App">
-        <Row className="row justify-content-sm-center">
-          <Col xs={12} md={8} className="mb-4">
-            {this.state.videos.length > 0 &&
-              <Screen embedUrl={`https://www.youtube.com/embed/${this.state.videos[this.state.selectedVideo].snippet.resourceId.videoId}`} />}
-            <NewsMarquee totalRecovered={this.state.totalRecovered} />
-            <Playlist videos={this.state.videos} onVideoChange={this.onVideoChange}/>
-          </Col>
-          <Col xs={12} md={4} className="mb-4">
-            <Control onPlaylistChange={this.onPlaylistChange}
-                     onStatisticsChange={this.onStatisticsChange} />
-            <HowToHug />
-          </Col>
-        </Row>
-      </Container>
+      <React.Fragment>
+        <Container className="App">
+          <Row className="row justify-content-sm-center">
+            <Col xs={12} md={8} className="mb-4">
+              {this.state.videos.length > 0 &&
+                <Screen embedUrl={`https://www.youtube.com/embed/${this.state.videos[this.state.selectedVideo].snippet.resourceId.videoId}`} />}
+              <NewsMarquee totalRecovered={this.state.totalRecovered} />
+              <Playlist videos={this.state.videos} onVideoChange={this.onVideoChange}/>
+            </Col>
+            <Col xs={12} md={4} className="mb-4">
+              <Control onPlaylistChange={this.onPlaylistChange}
+                      onStatisticsChange={this.onStatisticsChange} />
+              <HowToHug />
+            </Col>
+          </Row>
+        </Container>
+      </React.Fragment>
     );
   }
 }

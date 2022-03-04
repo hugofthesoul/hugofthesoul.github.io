@@ -1,36 +1,42 @@
 import React from 'react';
 
 import Accordion from 'react-bootstrap/Accordion';
+import { useAccordionButton } from 'react-bootstrap';
 import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
 
 import './ChannelTuner.scss'
 
+function HeaderToggle({ children, eventKey, value, onClick }) {
+
+  const decoratedOnClick = useAccordionButton(eventKey, (event) =>{
+    const category = event.currentTarget.value;    
+    onClick(category);
+  });
+
+  return (
+    <Accordion.Button 
+      as={Button} 
+      type="button"
+      onClick={decoratedOnClick}
+      variant="link"
+      value={value}
+    >
+      {children}
+    </Accordion.Button>
+  );
+}
+
 class ChannelTuner extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      selectedToggleIndex: 0
-    };
-  }
 
-  handleToggle = (selectedToggleIndex) => (evt) => {
-    const category = evt.currentTarget.value;
-    this.setState({
-      selectedToggleIndex
-    }, () => {
-      this.props.onSelectedChannelChange(category)
-    });
-  }
-
-  render(){
+  render() {
     return (
       <Accordion bsPrefix="channel-tuner-accordion" defaultActiveKey="0">
-        <Card className={this.state.selectedToggleIndex === 0 ? 'active' : ''}>
+        <Card key="gratitude">
           <Card.Header>
-            <Accordion.Toggle as={Button} value="gratitude" onClick={this.handleToggle(0)} variant="link" eventKey="0">
+            <HeaderToggle value="gratitude" eventKey="0" onClick={this.props.onSelectedChannelChange}>
               GRATITUDE
-            </Accordion.Toggle>
+            </HeaderToggle>
           </Card.Header>
           <Accordion.Collapse eventKey="0">
             <Card.Body>
@@ -42,49 +48,50 @@ class ChannelTuner extends React.Component {
             </Card.Body>
           </Accordion.Collapse>
         </Card>
-        <Card className={this.state.selectedToggleIndex === 1 ? 'active' : ''}>
-          <Card.Header>
-            <Accordion.Toggle as={Button} value="kindness" onClick={this.handleToggle(1)} variant="link" eventKey="1">
+        <Card key="kindness">
+          <Card.Header>            
+            <HeaderToggle value="kindness" eventKey="1"  onClick={this.props.onSelectedChannelChange}>
               KINDNESS
-            </Accordion.Toggle>
+            </HeaderToggle>
           </Card.Header>
           <Accordion.Collapse eventKey="1">
             <Card.Body>
               <Card.Text>
-                  <p>Normal news focuses in the worst side of people during crisis. We focus on heart warming acts of kindness, helping strangers, helping each other.</p>
-                  <p>Using creativity, talent, skills and good will to find solutions to problems. Seeing opportunities in the crisis instead of despair. From helping elders and ill people with their errands, helping the poor with food, making medical supply with local resources and so much more. Get inspired, then help others.</p>
-                  <p>It is more blessed to give than to receive. - Acts 20:35</p>
+                <p>Normal news focuses in the worst side of people during crisis. We focus on heart warming acts of kindness, helping strangers, helping each other.</p>
+                <p>Using creativity, talent, skills and good will to find solutions to problems. Seeing opportunities in the crisis instead of despair. From helping elders and ill people with their errands, helping the poor with food, making medical supply with local resources and so much more. Get inspired, then help others.</p>
+                <p>It is more blessed to give than to receive. - Acts 20:35</p>
               </Card.Text>
             </Card.Body>
           </Accordion.Collapse>
         </Card>
-        <Card className={this.state.selectedToggleIndex === 2 ? 'active' : ''}>
+        <Card key="miracles">
           <Card.Header>
-            <Accordion.Toggle as={Button} value="miracle" onClick={this.handleToggle(2)} variant="link" eventKey="2">
+            <HeaderToggle  value="miracles" eventKey="2" onClick={this.props.onSelectedChannelChange}>
               MIRACLES
-            </Accordion.Toggle>
+            </HeaderToggle>
           </Card.Header>
           <Accordion.Collapse eventKey="2">
             <Card.Body>
-            <Card.Text>Miracles happen every day, every moment, only that people are too busy to notice. Let us share just a little sample of the wonders happening all over the world. People recovering against all odds, prayers answered, supplies provided super naturally, people transformed, people resilience, people changing for good.
-                  <p>Doctors/Nurses: rest in the fact that you did all within your strength, let God to give you peace in the storm.</p>
-                  <p>For nothing will be impossible with God. - Luke 1:37</p>
+            <Card.Text>
+              Miracles happen every day, every moment, only that people are too busy to notice. Let us share just a little sample of the wonders happening all over the world. People recovering against all odds, prayers answered, supplies provided super naturally, people transformed, people resilience, people changing for good.
+              <p>Doctors/Nurses: rest in the fact that you did all within your strength, let God to give you peace in the storm.</p>
+              <p>For nothing will be impossible with God. - Luke 1:37</p>
             </Card.Text>
             </Card.Body>
           </Accordion.Collapse>
         </Card>
-        <Card className={this.state.selectedToggleIndex === 3 ? 'active' : ''}>
+        <Card key="unity">
           <Card.Header>
-            <Accordion.Toggle as={Button} value="doctors" onClick={this.handleToggle(3)} variant="link" eventKey="3">
+            <HeaderToggle value="unity" eventKey="3" onClick={this.props.onSelectedChannelChange}>
               UNITY
-            </Accordion.Toggle>
+            </HeaderToggle>
           </Card.Header>
           <Accordion.Collapse eventKey="3">
             <Card.Body>
-             <Card.Text>
-              <p>You are not alone. We fight together against COVID-19. Be encouraged and inspired by what other medical care providers are doing around the world.</p>
-              <p>The Lord himself goes before you and will be with you; he will never leave you nor forsake you. Do not be afraid; do not be discouraged.” - Deuteronomy 31:8</p>
-             </Card.Text>
+              <Card.Text>
+                <p>You are not alone. We fight together against COVID-19. Be encouraged and inspired by what other medical care providers are doing around the world.</p>
+                <p>The Lord himself goes before you and will be with you; he will never leave you nor forsake you. Do not be afraid; do not be discouraged.” - Deuteronomy 31:8</p>
+              </Card.Text>
             </Card.Body>
           </Accordion.Collapse>
         </Card>
